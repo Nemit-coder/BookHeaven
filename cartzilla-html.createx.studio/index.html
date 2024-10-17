@@ -13,6 +13,9 @@
     <meta name="keywords" content="online shop, e-commerce, online store, market, multipurpose, product landing, cart, checkout, ui kit, light and dark mode, bootstrap, html5, css3, javascript, gallery, slider, mobile, pwa">
     <meta name="author" content="Createx Studio">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
     <!-- Webmanifest + Favicon / App icons -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -37,7 +40,8 @@
     <link rel="preload" href="assets/css/theme.min.css" as="style">
     <link rel="preload" href="assets/css/theme.rtl.min.css" as="style">
     <link rel="stylesheet" href="assets/css/theme.min.css" id="theme-styles">
-
+    <link rel="stylesheet" href="assets/css/style.css">
+    
     <!-- Customizer -->
     <script src="assets/js/customizer.min.js"></script>
 
@@ -104,149 +108,6 @@
 
   <!-- Body -->
   <body>
-
-    <!-- Customizer offcanvas -->
-    <div class="offcanvas offcanvas-end" id="customizer" tabindex="-1">
-      <div class="offcanvas-header border-bottom">
-        <h4 class="h5 offcanvas-title">Customize theme</h4>
-        <button class="btn-close" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-
-        <!-- Customizer settings -->
-        <div class="customizer-collapse collapse show" id="customizerSettings">
-
-          <!-- Colors -->
-          <div class="pb-4 mb-2">
-            <div class="d-flex align-items-center mb-3">
-              <i class="ci-paint text-body-tertiary fs-5 me-2"></i>
-              <h5 class="fs-lg mb-0">Colors</h5>
-            </div>
-            <div class="row row-cols-2 g-3" id="theme-colors">
-              <div class="col">
-                <h6 class="fs-sm mb-2">Primary</h6>
-                <div class="color-swatch d-flex border rounded gap-3 p-2" id="theme-primary" data-color-labels="[&quot;theme-primary&quot;, &quot;primary&quot;, &quot;primary-rgb&quot;]">
-                  <input type="text" class="form-control bg-transparent border-0 rounded-0 p-1" value="#f55266">
-                  <label for="primary" class="ratio ratio-1x1 flex-shrink-0 w-100 cursor-pointer rounded-circle" style="max-width: 38px; background-color: #f55266"></label>
-                  <input type="color" class="visually-hidden" id="primary" value="#f55266">
-                </div>
-              </div>
-              <div class="col">
-                <h6 class="fs-sm mb-2">Success</h6>
-                <div class="color-swatch d-flex border rounded gap-3 p-2" id="theme-success" data-color-labels="[&quot;theme-success&quot;, &quot;success&quot;, &quot;success-rgb&quot;]">
-                  <input type="text" class="form-control bg-transparent border-0 rounded-0 p-1" value="#33b36b">
-                  <label for="success" class="ratio ratio-1x1 flex-shrink-0 w-100 cursor-pointer rounded-circle" style="max-width: 38px; background-color: #33b36b"></label>
-                  <input type="color" class="visually-hidden" id="success" value="#33b36b">
-                </div>
-              </div>
-              <div class="col">
-                <h6 class="fs-sm mb-2">Warning</h6>
-                <div class="color-swatch d-flex border rounded gap-3 p-2" id="theme-warning" data-color-labels="[&quot;theme-warning&quot;, &quot;warning&quot;, &quot;warning-rgb&quot;]">
-                  <input type="text" class="form-control bg-transparent border-0 rounded-0 p-1" value="#fc9231">
-                  <label for="warning" class="ratio ratio-1x1 flex-shrink-0 w-100 cursor-pointer rounded-circle" style="max-width: 38px; background-color: #fc9231"></label>
-                  <input type="color" class="visually-hidden" id="warning" value="#fc9231">
-                </div>
-              </div>
-              <div class="col">
-                <h6 class="fs-sm mb-2">Danger</h6>
-                <div class="color-swatch d-flex border rounded gap-2 p-2" id="theme-danger" data-color-labels="[&quot;theme-danger&quot;, &quot;danger&quot;, &quot;danger-rgb&quot;]">
-                  <input type="text" class="form-control bg-transparent border-0 rounded-0 p-1" value="#f03d3d">
-                  <label for="danger" class="ratio ratio-1x1 flex-shrink-0 w-100 cursor-pointer rounded-circle" style="max-width: 38px; background-color: #f03d3d"></label>
-                  <input type="color" class="visually-hidden" id="danger" value="#f03d3d">
-                </div>
-              </div>
-              <div class="col">
-                <h6 class="fs-sm mb-2">Info</h6>
-                <div class="color-swatch d-flex border rounded gap-2 p-2" id="theme-info" data-color-labels="[&quot;theme-info&quot;, &quot;info&quot;, &quot;info-rgb&quot;]">
-                  <input type="text" class="form-control bg-transparent border-0 rounded-0 p-1" value="#2f6ed5">
-                  <label for="info" class="ratio ratio-1x1 flex-shrink-0 w-100 cursor-pointer rounded-circle" style="max-width: 38px; background-color: #2f6ed5"></label>
-                  <input type="color" class="visually-hidden" id="info" value="#2f6ed5">
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Direction -->
-          <div class="pb-4 mb-2">
-            <div class="d-flex align-items-center pb-1 mb-2">
-              <i class="ci-sort text-body-tertiary fs-lg me-2" style="transform: rotate(90deg)"></i>
-              <h5 class="fs-lg mb-0">Direction</h5>
-            </div>
-            <div class="d-flex align-items-center justify-content-between border rounded p-3">
-              <div class="me-3">
-                <h6 class="mb-1">RTL</h6>
-                <p class="fs-sm mb-0">Change text direction</p>
-              </div>
-              <div class="form-check form-switch m-0">
-                <input type="checkbox" class="form-check-input" role="switch" id="rtl-switch">
-              </div>
-            </div>
-            <div class="alert alert-info p-2 mt-2 mb-0">
-              <div class="d-flex text-body-emphasis fs-xs py-1 pe-1">
-                <i class="ci-info text-info fs-lg mb-2 mb-sm-0" style="margin-top: .125rem"></i>
-                <div class="ps-2">To switch the text direction of your webpage from LTR to RTL, please consult the detailed instructions provided in the relevant section of our documentation.</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Border width -->
-          <div class="pb-4 mb-2">
-            <div class="d-flex align-items-center pb-1 mb-2">
-              <i class="ci-menu text-body-tertiary fs-lg me-2"></i>
-              <h5 class="fs-lg mb-0">Border width, px</h5>
-            </div>
-            <div class="slider-input d-flex align-items-center gap-3 border rounded p-3" id="border-input">
-              <input type="range" class="form-range" min="0" max="10" step="1" value="1">
-              <input type="number" class="form-control" id="border-width" min="0" max="10" value="1" style="max-width: 5.5rem">
-            </div>
-          </div>
-
-          <!-- Rounding -->
-          <div class="d-flex align-items-center pb-1 mb-2">
-            <i class="ci-maximize text-body-tertiary fs-lg me-2"></i>
-            <h5 class="fs-lg mb-0">Rounding, rem</h5>
-          </div>
-          <div class="slider-input d-flex align-items-center gap-3 border rounded p-3">
-            <input type="range" class="form-range" min="0" max="5" step=".05" value="0.5">
-            <input type="number" class="form-control" id="border-radius" min="0" max="5" step=".05" value="0.5" style="max-width: 5.5rem">
-          </div>
-        </div>
-
-        <!-- Customizer code -->
-        <div class="customizer-collapse collapse" id="customizerCode">
-          <div class="nav mb-3">
-            <a class="nav-link animate-underline fs-base p-0" href=".html" data-bs-toggle="collapse" aria-expanded="true" aria-controls="customizerSettings customizerCode">
-              <i class="ci-chevron-left fs-lg ms-n1 me-1"></i>
-              <span class="animate-target">Back to settings</span>
-            </a>
-          </div>
-          <p class="fs-sm pb-1">To apply the provided styles to your webpage, enclose them within a <code>&lt;style&gt;</code> tag and insert this tag into the <code>&lt;head&gt;</code> section of your HTML document after the following link to the main stylesheet:<br><code>&lt;link href="assets/css/theme.min.css"&gt;</code></p>
-          <div class="position-relative bg-body-tertiary rounded overflow-hidden pt-3">
-            <div class="position-absolute top-0 start-0 w-100 p-3">
-              <button type="button" class="btn btn-sm btn-outline-dark w-100" data-copy-text-from="#generated-styles" data-done-label="Code copied">
-                <i class="ci-copy fs-sm me-1"></i>
-                Copy code
-              </button>
-            </div>
-            <pre class="text-wrap bg-transparent border-0 fs-xs text-body-emphasis p-4 pt-5" id="generated-styles"></pre>
-          </div>
-        </div>
-      </div>
-
-      <!-- Offcanvas footer (Action buttons) -->
-      <div class="offcanvas-header border-top gap-3 d-none" id="customizer-btns">
-        <button type="button" class="btn btn-lg btn-secondary w-100 fs-sm" id="customizer-reset">
-          <i class="ci-trash fs-lg me-2 ms-n1"></i>
-          Reset
-        </button>
-        <button class="btn btn-lg btn-primary hiding-collapse-toggle w-100 fs-sm collapsed" type="button" data-bs-toggle="collapse" data-bs-target=".customizer-collapse" aria-expanded="false" aria-controls="customizerSettings customizerCode">
-          <i class="ci-code fs-lg me-2 ms-n1"></i>
-          Show code
-        </button>
-      </div>
-    </div>
-
-
     <!-- Navigation bar (Page header) -->
     <header class="navbar navbar-expand-lg bg-body navbar-sticky sticky-top px-0" data-sticky-element="">
       <div class="container flex-nowrap">
@@ -257,7 +118,7 @@
         </button>
 
         <!-- Navbar brand (Logo) -->
-        <a href="index.html" class="navbar-brand py-1 py-md-2 py-xl-1">
+        <a href="index.html" class="navbar-brand py-1 py-md-1 py-xl-1 mx-5">
           <span class="d-none d-sm-flex flex-shrink-0 text-primary me-2">
             <img src="assets/img/book-heaven-logo.jpeg" width="90">
           </span>
@@ -499,12 +360,6 @@
                   <li><a class="dropdown-item" href="terms-and-conditions.html">Terms &amp; Conditions</a></li>
                 </ul>
               </li>
-              <li class="nav-item py-lg-2 me-lg-n2 me-xl-0">
-                <a class="nav-link" href="docs/installation.html">Docs</a>
-              </li>
-              <li class="nav-item py-lg-2 me-lg-n2 me-xl-0">
-                <a class="nav-link" href="docs/typography.html">Components</a>
-              </li>
             </ul>
           </div>
         </nav>
@@ -551,9 +406,8 @@
           </div>
 
           <!-- Buy button  -->
-          <a class="btn btn-primary animate-slide-end" href="https://themes.getbootstrap.com/product/cartzilla-bootstrap-e-commerce-template-ui-kit/" target="_blank" rel="noreferrer">
-            <i class="ci-shopping-cart fs-base animate-target ms-n1 me-2"></i>
-            Buy now
+          <a class="btn btn-primary animate-slide-end" href="#" target="_blank" rel="noreferrer">
+            Login
           </a>
         </div>
       </div>
@@ -564,7 +418,30 @@
     <main class="content-wrapper">
 
       <!-- Hero (Demos) -->
-      <section class="pt-4 pt-sm-5 mt-3 mt-sm-0">
+      <section class="pt-1 pt-sm-1 mt-1 mt-sm-0">
+
+        <!-- Carousel -->
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="assets/img/book1.jpg" class="d-block w-50px" alt="..." height="60px">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/img/book2.jpg" class="d-block w-50px" alt="..." height="60px">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/img/book3.jpg" class="d-block w-50px" alt="..." height="60px">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
 
         <!-- Title -->
         <div class="container text-center pt-lg-2 pt-xl-3 mx-auto pb-4 pb-sm-0 mb-3 mb-sm-5" style="max-width: 680px">
@@ -579,7 +456,7 @@
             <!-- Furniture store -->
             <div class="hover-effect-scale ratio" id="furniture" style="--cz-transform-scale: 1.03; --cz-transition-duration: .3s">
               <div class="nav flex-column position-absolute top-0 start-0 w-100 h-100 z-2 pt-4 pt-xl-5 px-4 ps-xl-5 mt-lg-2 ms-lg-2 m-xl-0">
-                <h2 class="h3 d-none d-lg-block pb-2 mb-1">Furniture Store</h2>
+                <h2 class="h3 d-none d-lg-block pb-2 mb-1">Fictional</h2>
                 <h2 class="h4 d-lg-none mb-2">Furniture Store</h2>
                 <p class="fs-xs mb-2 mb-xl-3 d-none d-sm-block d-md-none d-lg-block" style="max-width: 250px">Explore a curated collection of stylish and modern furniture for every room.</p>
                 <a class="nav-link animate-underline stretched-link text-dark-emphasis py-1 px-0" href="home-furniture.html">
@@ -919,23 +796,7 @@
 
     <!-- Page footer -->
     <footer class="footer pt-xxl-2">
-      <div class="container">
-        <div class="position-relative py-5 px-4 p-sm-5">
-          <div class="position-absolute top-0 start-0 w-100 h-100 rounded-5 d-none-dark rtl-flip" style="background: linear-gradient(102deg, #dad4ec 0%, #f3e7e9 80.43%);"></div>
-          <div class="position-absolute top-0 start-0 w-100 h-100 rounded-5 d-none d-block-dark rtl-flip" style="background: linear-gradient(102deg, #38314b 0%, #3f353a 100%);"></div>
-          <div class="position-relative z-1 text-center py-md-3 my-lg-3">
-            <p class="fs-xl pb-2 mb-1">Still not convinced?</p>
-            <h2 class="pb-2 pb-sm-3">Add premium support and lifetime updates to this.</h2>
-            <a class="btn btn-lg btn-primary animate-slide-end" href="https://themes.getbootstrap.com/product/cartzilla-bootstrap-e-commerce-template-ui-kit/" target="_blank" rel="noreferrer">
-              <i class="ci-shopping-cart fs-base animate-target ms-n1 me-2"></i>
-              Buy now
-            </a>
-          </div>
-        </div>
-        <div class="fs-sm text-center py-4 py-lg-5 my-sm-2 my-md-3 my-lg-0">
-          © All rights reserved. Made by <span class="animate-underline"><a class="animate-target text-dark-emphasis text-decoration-none" href="https://createx.studio/" target="_blank" rel="noreferrer">Createx Studio</a></span>
-        </div>
-      </div>
+      
     </footer>
 
 
@@ -948,9 +809,6 @@
         <svg class="position-absolute top-0 start-0 w-100 h-100 z-1" viewBox="0 0 62 32" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x=".75" y=".75" width="60.5" height="30.5" rx="15.25" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"></rect>
         </svg>
-      </a>
-      <a class="btn btn-sm btn-outline-secondary text-uppercase bg-body rounded-pill shadow animate-rotate ms-2 me-n5" href="#customizer" style="font-size: .625rem; letter-spacing: .05rem;" data-bs-toggle="offcanvas" role="button" aria-controls="customizer">
-        Customize<i class="ci-settings fs-base ms-1 me-n2 animate-target"></i>
       </a>
     </div>
 
