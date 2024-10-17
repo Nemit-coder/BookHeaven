@@ -3,9 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Scrollable Book List</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .scroll-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        .scroll-container::-webkit-scrollbar {
+            display: none;  /* Chrome, Safari and Opera */
+        }
+        .book-card {
+            flex: 0 0 auto;
+            margin-right: 20px;
+            scroll-snap-align: start;
+        }
+        .scroll-button-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>This is demo</h1>
+    
+    <script>
+        function scrollLeft() {
+            document.querySelector('.scroll-container').scrollBy({ left: -200, behavior: 'smooth' });
+        }
+        function scrollRight() {
+            document.querySelector('.scroll-container').scrollBy({ left: 200, behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
