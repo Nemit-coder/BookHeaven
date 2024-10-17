@@ -12,8 +12,10 @@
 
     if (mysqli_num_rows($result) > 0) {
       while($row=mysqli_fetch_assoc($result)){
+          session_start();
+          $_SESSION['signin'] = true;
         echo "<script>alert('Sign in Successfully')</script>";
-        echo "<script>window.open('index.html','_self')</script>";
+        echo "<script>window.open('index.php','_self')</script>";
       }
     }
     else{

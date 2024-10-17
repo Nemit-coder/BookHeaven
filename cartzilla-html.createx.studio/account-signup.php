@@ -16,12 +16,14 @@
       }
   
       else{
+          session_start();
+          $_SESSION['signup'] = true;
           $sql = "INSERT INTO tbl_signup (email,password) VALUES ('$email','$password')";
           $result = mysqli_query($connect_query,$sql);
   
           if($result){
               echo "<script>alert('Account Created Successfully')</script>";
-              echo "<script>window.open('index.html','_self')</script>";
+              echo "<script>window.open('index.php','_self')</script>";
           }
       }
       

@@ -1,6 +1,7 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html><html lang="en" data-bs-theme="light" data-pwa="true">
-<!-- Mirrored from cartzilla-html.createx.studio/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 15 Oct 2024 09:25:22 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
     <meta charset="utf-8">
 
@@ -119,7 +120,7 @@
         </button>
 
         <!-- Navbar brand (Logo) -->
-        <a href="index.html" class="navbar-brand py-1 py-md-1 py-xl-1 mx-5">
+        <a href="index.php" class="navbar-brand py-1 py-md-1 py-xl-1 mx-5">
           <span class="d-none d-sm-flex flex-shrink-0 text-primary me-2">
             <img src="assets/img/book-heaven-logo.jpeg" width="90">
           </span>
@@ -407,12 +408,22 @@
           </div>
 
           <!-- Buy button  -->
-          <a class="btn btn-primary animate-slide-end" href="account-signin.php" target="_blank" rel="noreferrer">
-            Sign in
-          </a>
-          <a class="btn btn-primary animate-slide-end" href="account-signup.php" target="_blank" rel="noreferrer">
-            Sign up
-          </a>
+           <?php
+              if(isset($_SESSION['signin']) && $_SESSION['signin']==true){
+                echo '<a class="btn btn-icon btn-lg fs-lg btn-outline-secondary border-0 rounded-circle animate-shake d-none d-md-inline-flex" href="account-signin.php">
+            <i class="ci-user animate-target"></i>
+            <span class="visually-hidden">Account</span>
+          </a>';
+                      }
+            else{  
+              echo ' <a class="btn btn-primary animate-slide-end" href="account-signin.php" target="_blank" rel="noreferrer">
+                     Sign in
+                      </a>          
+                         <a class="btn btn-primary animate-slide-end" href="account-signup.php" target="_blank" rel="noreferrer">
+                          Sign up
+                      </a>';
+            }
+          ?>
         </div>
       </div>
     </header>
@@ -740,5 +751,4 @@
   
 
 </body>
-<!-- Mirrored from cartzilla-html.createx.studio/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 15 Oct 2024 09:26:40 GMT -->
 </html>
