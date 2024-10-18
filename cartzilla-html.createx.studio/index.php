@@ -414,7 +414,7 @@
                         <i class="ci-user animate-target"></i>
                         <span class="visually-hidden">Account</span>
                       </a>
-                      <a class="btn btn-primary animate-slide-end" href="account-logout.php" target="_blank" rel="noreferrer">
+                      <a class="btn btn-primary animate-slide-end" href="account-logout.php" rel="noreferrer">
                      Logout
                       </a>';
                       }
@@ -424,16 +424,16 @@
                         <i class="ci-user animate-target"></i>
                         <span class="visually-hidden">Account</span>
                       </a>
-                      <a class="btn btn-primary animate-slide-end" href="account-logout.php" target="_blank" rel="noreferrer">
+                      <a class="btn btn-primary animate-slide-end" href="account-logout.php" rel="noreferrer">
                      Logout
                       </a>';
               }
 
               else{  
-                echo ' <a class="btn btn-primary animate-slide-end" href="account-signin.php" target="_blank" rel="noreferrer">
+                echo ' <a class="btn btn-primary animate-slide-end" href="account-signin.php" rel="noreferrer">
                       Sign in
                         </a>          
-                      <a class="btn btn-primary animate-slide-end" href="account-signup.php" target="_blank" rel="noreferrer">
+                      <a class="btn btn-primary animate-slide-end" href="account-signup.php" rel="noreferrer">
                           Sign up
                         </a>';
               }
