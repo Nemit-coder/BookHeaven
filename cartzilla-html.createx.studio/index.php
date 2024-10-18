@@ -410,19 +410,33 @@
           <!-- Buy button  -->
            <?php
               if(isset($_SESSION['signin']) && $_SESSION['signin']==true){
-                echo '<a class="btn btn-icon btn-lg fs-lg btn-outline-secondary border-0 rounded-circle animate-shake d-none d-md-inline-flex" href="account-signin.php">
-            <i class="ci-user animate-target"></i>
-            <span class="visually-hidden">Account</span>
-          </a>';
-                      }
-            else{  
-              echo ' <a class="btn btn-primary animate-slide-end" href="account-signin.php" target="_blank" rel="noreferrer">
-                     Sign in
-                      </a>          
-                         <a class="btn btn-primary animate-slide-end" href="account-signup.php" target="_blank" rel="noreferrer">
-                          Sign up
+                echo '<a class="btn btn-icon btn-lg fs-lg btn-outline-secondary border-0 rounded-circle animate-shake d-none d-md-inline-flex"        href="account-signin.php">
+                        <i class="ci-user animate-target"></i>
+                        <span class="visually-hidden">Account</span>
+                      </a>
+                      <a class="btn btn-primary animate-slide-end" href="account-logout.php" target="_blank" rel="noreferrer">
+                     Logout
                       </a>';
-            }
+                      }
+
+              else if(isset($_SESSION['signup']) && $_SESSION['signup']==true){
+                  echo '<a class="btn btn-icon btn-lg fs-lg btn-outline-secondary border-0 rounded-circle animate-shake d-none d-md-inline-flex"        href="account-signin.php">
+                        <i class="ci-user animate-target"></i>
+                        <span class="visually-hidden">Account</span>
+                      </a>
+                      <a class="btn btn-primary animate-slide-end" href="account-logout.php" target="_blank" rel="noreferrer">
+                     Logout
+                      </a>';
+              }
+
+              else{  
+                echo ' <a class="btn btn-primary animate-slide-end" href="account-signin.php" target="_blank" rel="noreferrer">
+                      Sign in
+                        </a>          
+                      <a class="btn btn-primary animate-slide-end" href="account-signup.php" target="_blank" rel="noreferrer">
+                          Sign up
+                        </a>';
+              }
           ?>
         </div>
       </div>
