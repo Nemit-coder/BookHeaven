@@ -8,10 +8,10 @@ if(!isset($_SESSION["username"])){
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en-US" dir="ltr">
 <?php 
-// $vid=base64_decode($_GET['viewid']);
-// $vid1=base64_decode($vid);
-// $vid2=base64_decode($vid1);
-// $ret=mysqli_query($conn,"select * from tbl_admission where enrollment_no =$vid2");
+  $book_id = base64_decode(base64_decode(base64_decode(base64_decode(base64_decode($_GET['bookid'])))));
+  $sql = "SELECT * FROM tbl_book WHERE id='$book_id'";
+  $result = mysqli_query($conn,$sql);
+  $row = mysqli_fetch_array($result);
 $cnt=1;
 // while ($row=mysqli_fetch_array($ret)) {
  
@@ -80,14 +80,14 @@ $cnt=1;
           <div class="card mb-3">
             <div class="card-body d-flex flex-wrap flex-between-center">
               <div>
-                <h6 class="text-primary">64987654</h6>
-                <h5 class="mb-0">nemit</h5>
+                <h6 class="text-primary"><?php echo $row['isbn'] ?></h6>
+                <h5 class="mb-0"><?php echo $row['name'] ?></h5>
               </div>
               <div>
            </div>
               <div>
              
-              <a class="btn btn-primary btn-sm me-2" type="button" href="<?php echo BASE_URL;?>documents/job_letter.php?sVVQwOQVxjMWVHUlhiSGxVxjiSGxMWVHUlh=<?php echo base64_encode(base64_encode(base64_encode($row['enrollment_no'])));?>">
+              <a class="btn btn-primary btn-sm me-2" type="button" href="">
                 <span class="far fa-file-pdf me-md-1"> </span>
                 <span class="d-none d-md-inline">Add Book Image</span>
                   </a>
@@ -113,28 +113,28 @@ $cnt=1;
                         <tbody>
                           <tr>
                             <td class="p-1" style="width: 15%;">ISBN Number :</td>
-                            <td class="p-1" style="width: 25%;">10-20-2004</td>
+                            <td class="p-1" style="width: 25%;"><?php echo $row['isbn'] ?></td>
                           </tr>
                          
                           <tr>
-                            <td class="p-1" style="width: 15%;">Category :</td>
-                            <td class="p-1"><a class="text-600 text-decoration-none">nemit@gmail.com</a></td>
+                            <td class="p-1" style="width: 15%;">Name :</td>
+                            <td class="p-1"><a class="text-600 text-decoration-none"><?php echo $row['name'] ?></a></td>
                           </tr>
                           <tr>
-                            <td class="p-1" style="width: 15%;">Name :</td>
-                            <td class="p-1"><a class="text-600 text-decoration-none">02-05-2048</a></td>
+                            <td class="p-1" style="width: 15%;">Category :</td>
+                            <td class="p-1"><a class="text-600 text-decoration-none"><?php echo $row['category'] ?></a></td>
                           </tr>
                           <tr>
                             <td class="p-1" style="width: 35%;">Publisher :</td>
-                            <td class="p-1"><a class="text-600 text-decoration-none">01-05,palik mumbi</td>
+                            <td class="p-1"><a class="text-600 text-decoration-none"><?php echo $row['publisher'] ?></td>
                           </tr>
                           <tr>
                             <td class="p-1" style="width: 35%;">Author :</td>
-                            <td class="p-1"><a class="text-600 text-decoration-none">santosh nagar</a></td>
+                            <td class="p-1"><a class="text-600 text-decoration-none"><?php echo $row['author'] ?></a></td>
                           </tr>
                           <tr>
                             <td class="p-1" style="width: 35%;">Description :</td>
-                            <td class="p-1"><a class="text-600 text-decoration-none">santosh nagar</a></td>
+                            <td class="p-1"><a class="text-600 text-decoration-none"><?php echo $row['description'] ?></a></td>
                           </tr>
                           
                         </tbody>
@@ -169,17 +169,27 @@ $cnt=1;
                         <tbody>
                           <tr>
                             <td class="p-1" style="width: 35%;">Language :</td>
-                            <td class="p-1 text-600"><b>web development</b></td>
+                            <td class="p-1 text-600"><b><?php echo $row['language'] ?></b></td>
                           </tr>
                           <tr>
                             <td class="p-1" style="width: 35%;">Amount :</td>
-                            <td class="p-1 text-600">amit mehta</td>
+                            <td class="p-1 text-600"><?php echo $row['amount'] ?></td>
                           </tr>
                             <td class="p-1" style="width: 35%;">Course Status:</td>
                             <td class="p-1 text-600">
+                        <?php if($row['status'] == 1) { ?>
                             <span class="badge rounded-pill badge-subtle-success me-2"><span>
                             Active
                             </span>
+                        <?php
+                            }
+                          else {?>
+                              <span class="badge rounded-pill badge-subtle-danger me-2"><span>
+                                Deactive
+                              </span>
+                        <?php  
+                          }
+                        ?>
                             </td>
                         </tr>
                   </div>

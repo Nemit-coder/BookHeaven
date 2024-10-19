@@ -4,7 +4,7 @@ $faname = $_SESSION["first_name"];
 $laname = $_SESSION["last_name"];
 
 $category= base64_encode(base64_encode(base64_encode('category')));
-$doc= base64_encode(base64_encode(base64_encode('image')));
+$book= base64_encode(base64_encode(base64_encode('book')));
 
 
  if(isset($_POST['insert_category']))
@@ -43,7 +43,7 @@ else if(isset($_POST['insert_book'])) {
 
 		if($result){
 			echo "<script>alert('Book Inserted Successfully')</script>";
-			echo "<script>window.open('../view/view.php?VxjMWVHUlhiSGxsVVQwOQ=$doc','_self')</script>";
+			echo "<script>window.open('../view/view.php?VxjMWVHUlhiSGxsVVQwOQ=$book','_self')</script>";
 		}
 		else{
 			echo "<script>alert('Error Inserting Book')</script>";

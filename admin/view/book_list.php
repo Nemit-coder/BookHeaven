@@ -66,9 +66,24 @@
                         <td class="align-middle name py-2 pe-2"><?php echo $row["language"]; ?></td>
                         <td class="align-middle name py-2 pe-2"><?php echo $row["amount"]; ?></td>
                         <td class="align-middle name py-2 pe-2"><?php echo $row["sp_amount"]; ?></td>
-                        <td class="align-middle name py-2 pe-2"><?php echo $row["status"]; ?></td>
                         <td>
-                          <a class="btn btn-falcon-default btn-sm mb-sm-0" href="../delete.php?productid=<?php echo base64_encode(base64_encode(base64_encode(base64_encode(base64_encode($row['id'])))))?>" type="button">
+                        <?php if($row['status'] == 1) { ?>
+                            <span class="badge rounded-pill badge-subtle-success me-2"><span>
+                            Active
+                            </span>
+                        <?php
+                            }
+                          else {?>
+                              <span class="badge rounded-pill badge-subtle-danger me-2"><span>
+                                Deactive
+                              </span>
+                        <?php  
+                          }
+                        ?>
+                        </td>
+                        <!-- <td class="align-middle name py-2 pe-2"><?php echo $row["status"]; ?></td> -->
+                        <td>
+                          <a class="btn btn-falcon-default btn-sm mb-sm-0" href="book-details.php?bookid=<?php echo base64_encode(base64_encode(base64_encode(base64_encode(base64_encode($row['id'])))))?>" type="button">
                                                 <span class="fas fa-eye me-1"> </span>
                           </a>    
                           
