@@ -29,7 +29,7 @@ $doc= base64_encode(base64_encode(base64_encode('image')));
 else if(isset($_POST['insert_book'])) {
 		// Taking Inputs
 		$isbn = $_POST['isbn'];
-		$bookname = $_POST['book-name'];
+		$bookname = $_POST['bookname'];
 		$category = $_POST['category'];
 		$publisher = $_POST['publisher'];
 		$author = $_POST['author'];
@@ -38,7 +38,18 @@ else if(isset($_POST['insert_book'])) {
 		$amount = $_POST['amount'];
 		$spamount = $_POST['spamount'];
 
-		$sql = "INSERT INTO tbl_book (isbn,category,name,publisher,author,description,language,amount,sp_amount) VALUES ($isbn,$)"
+		// $sql = "INSERT INTO tbl_book (`isbn`, `category`, `name`, `publisher`, `author`, `description`, `language`, `amount`, `sp_amount`) VALUES ($isbn,$category,$bookname,$publisher,$author,$description,$language,$amount,$spamount)";
+		$sql = "INSERT INTO tbl_book (`isbn`) VALUES ($isbn)";
+		$result = mysqli_query($conn,$sql);
+
+		if($result){
+			echo "<script>alert('Book Inserted Successfully')</script>";
+			echo "<script>window.open('../view/product_image.php','_self')</script>";
+		}
+		else{
+			echo "<script>alert('Error Inserting Book')</script>";
+			echo "<script>window.open('doc.php','_self')</script>";
+		}
 }
 
 	else if (isset($_POST['insert_student_notice'])) {

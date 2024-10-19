@@ -28,20 +28,22 @@
                       </div>
                       <div class="col-6 mb-2">
                             <label class="form-label" for="manufacturar-name">Book Name:</label>
-                            <input class="form-control" id="book-name" type="text" name="name">
+                            <input class="form-control" id="book-name" type="text" name="bookname">
                       </div>
                   </div>
 
                   <div class="row gx-2">
                       <div class="col-6 mb-2">
                         <label class="form-label" for="product-name">Category:</label>
-                        <select name="" id="" class="form-select">
+                        <select name="category" id="" class="form-select">
                           <option desabled selected>Category</option>
                           <?php
                                 include '../include/connection.php';
                                 $result = mysqli_query($conn,"SELECT * FROM tbl_category ORDER BY id DESC");
-                                while($row = mysqli_fetch_array($result)){
-                                  echo "<option>". $row['category_name'] . "</option>";
+                                while($row = mysqli_fetch_array($result))
+                                {?>
+                                  <option  value='<?php echo $row['category_name'] ?>'><?php echo $row['category_name'] ?></option>
+                                 <?php 
                                 }
                                 mysqli_close($conn);
                           ?>
