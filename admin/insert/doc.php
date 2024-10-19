@@ -21,35 +21,60 @@
                   <h6 class="mb-0">Basic information</h6>
                 </div>
                 <div class="card-body pt-0">
-                 
                   <div class="row gx-2">
                       <div class="col-6 mb-2">
-                        <label class="form-label" for="product-name">Select File:</label>
-                        <input class="form-control" id="product-name" type="file" name="stat_file"/>
-                    </div>
-                     
+                        <label class="form-label" for="product-name">ISBN Number:</label>
+                        <input class="form-control" id="isbn" type="number" name="isbn">
+                      </div>
                       <div class="col-6 mb-2">
-                        <label class="form-label" for="manufacturar-name">Category Name:</label>
-                        <select class="form-select" id="import-status" name="category">
-                        <option value="imported" selected disabled>Select Category</option>
-                        <?php
-                                           include '../include/connection.php';                 
-                                          $records = mysqli_query($conn, "SELECT * From tbl_category order by id desc"); 
-                                          while($data = mysqli_fetch_array($records))
-                                          {?>
-                                            <option value='<?php echo $data['id'] ?>'><?php echo $data['name'] ?></option>";
-                                          <?php } 
-                                            mysqli_close($conn);
-                                        ?>  
-                        </select>   
-                                  </div>
+                            <label class="form-label" for="manufacturar-name">Book Name:</label>
+                            <input class="form-control" id="isbn" type="number" name="name">
+                      </div>
                   </div>
 
-                 
+                  <div class="row gx-2">
+                      <div class="col-6 mb-2">
+                        <label class="form-label" for="product-name">Category:</label>
+                        <input class="form-control" id="isbn" type="number" name="isbn">
+                      </div>
+                      <div class="col-6 mb-2">
+                            <label class="form-label" for="manufacturar-name">Publisher:</label>
+                            <input class="form-control" id="isbn" type="number" name="name">
+                      </div>
+                  </div>
+                  
+                  <div class="row gx-2">
+                      <div class="col-6 mb-2">
+                        <label class="form-label" for="product-name">Author:</label>
+                        <input class="form-control" id="isbn" type="number" name="isbn">
+                      </div>
+                      <div class="col-6 mb-2">
+                            <label class="form-label" for="manufacturar-name">Description:</label>
+                            <input class="form-control" id="isbn" type="number" name="name">
+                      </div>
+                  </div>
+
+                  <div class="row gx-2">
+                      <div class="col-6 mb-2">
+                        <label class="form-label" for="product-name">Language:</label>
+                        <input class="form-control" id="isbn" type="number" name="isbn">
+                      </div>
+                      <div class="col-6 mb-2">
+                            <label class="form-label" for="manufacturar-name">Amount:</label>
+                            <input class="form-control" id="isbn" type="number" name="name">
+                      </div>
+                  </div>
 
 
-                 
+                  <div class="row gx-2">
+                      <div class="col-6 mb-2">
+                        <label class="form-label" for="product-name">Special Amount:</label>
+                        <input class="form-control" id="isbn" type="number" name="isbn">
+                      </div>
+                  </div>
 
+                  
+                  </div>
                   </form>
                 </div>
               </div>
