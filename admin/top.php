@@ -40,31 +40,7 @@
       <li class="nav-item dropdown">
          <a class="nav-link pe-0 ps-2" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="avatar avatar-xl">
-               <img class="rounded-circle" src="<?php 
-                  if ($_SESSION['first_name'] == "Amit") {
-                      echo BASE_URL . 'assets/img/staff/amit.jpg';
-                  } else if ($_SESSION['first_name'] == "Vaishali") {
-                      echo BASE_URL . 'assets/img/staff/vaishali.jpg';
-                  } else if ($_SESSION['first_name'] == "Shailesh") {
-                      echo BASE_URL . 'assets/img/staff/shailesh.jpg';
-                  }
-                  else if ($_SESSION['first_name'] == "Yash") {
-                    echo BASE_URL . 'assets/img/staff/yash.jpg';
-                  }
-                  else if ($_SESSION['first_name'] == "Fenny") {
-                  echo BASE_URL . 'assets/img/staff/fenny.jpg';
-                  }
-                  else if ($_SESSION['first_name'] == "Vishal") {
-                  echo BASE_URL . 'assets/img/staff/vishal.jpg';
-                  }
-                  else if ($_SESSION['first_name'] == "Parimal") {
-                     echo BASE_URL . 'assets/img/staff/parimal.jpg';
-                     }
-                  
-                  else {
-                      echo BASE_URL . 'assets/img/team/3-thumb.png';
-                  }
-                  ?>">
+               <img class="rounded-circle" src="">
             </div>
          </a>
          <div class="dropdown-menu dropdown-caret dropdown-caret dropdown-menu-end py-0" aria-labelledby="navbarDropdownUser">

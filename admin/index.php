@@ -97,15 +97,6 @@
 $a = new DateTime('now', new DateTimeZone('Asia/Kolkata'));
 $time = $a->format('H');
 
-if ($time < 12 && $time >= 6) {
-    echo "Good Morning " . $_SESSION['first_name'] . ' ' . $_SESSION['last_name'];
-} elseif ($time < 16 && $time >= 12) {
-    echo "Good Afternoon " . $_SESSION["first_name"] . ' ' . $_SESSION["last_name"];
-} elseif ($time < 20 && $time >= 16) {
-    echo "Good Evening " . $_SESSION['first_name'] . ' ' . $_SESSION['last_name'];
-} elseif ($time < 6 || $time >= 20) {
-    echo "Good Night " . $_SESSION["first_name"] . ' ' . $_SESSION['last_name'];
-}
 ?></h3>
                                     <p>Here’s what happening with your business Today  </p>
                                  </div>

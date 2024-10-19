@@ -26,39 +26,19 @@ $doc= base64_encode(base64_encode(base64_encode('image')));
 }
 
 
-else if(isset($_POST['insert_documents'])) {
+else if(isset($_POST['insert_book'])) {
+		// Taking Inputs
+		$isbn = $_POST['isbn'];
+		$bookname = $_POST['book-name'];
+		$category = $_POST['category'];
+		$publisher = $_POST['publisher'];
+		$author = $_POST['author'];
+		$description = $_POST['description'];
+		$language = $_POST['language'];
+		$amount = $_POST['amount'];
+		$spamount = $_POST['spamount'];
 
-    $category = $_POST['category'];
-
-    // Handle the file upload
-    $stat_file = $_FILES['stat_file']['name'];
-
-    // Create target directory based on 'enroll' if it doesn't exist
-    $target_dir = "../uploads/" . $category . "/";
-    if (!file_exists($target_dir)) {
-        mkdir($target_dir, 0777, true);
-    }
-
-    $target_file = $target_dir . basename($_FILES["stat_file"]["name"]);
-
-    // Select file type
-    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-
-    // Valid file extensions
-    $extensions_arr = array("jpg","jpeg","png","gif");
-
-    // Check extension
-    if( in_array($imageFileType,$extensions_arr) ){
-        // Upload file
-        if(move_uploaded_file($_FILES['stat_file']['tmp_name'],$target_file)){
-            // Insert record
-            $query = "insert into tbl_product(category, stat_file) values('".$category."','".$stat_file."')";
-            mysqli_query($conn,$query);
-			echo "<script> alert('Docuement submitted successfully'); </script>";
-			echo "<script>window.open('../view/view.php?VxjMWVHUlhiSGxsVVQwOQ=$doc','_self')</script>";
-	
-        }
-    }
+		$sql = "INSERT INTO tbl_book (isbn,category,name,publisher,author,description,language,amount,sp_amount) VALUES ($isbn,$)"
 }
 
 	else if (isset($_POST['insert_student_notice'])) {
