@@ -68,11 +68,14 @@
                         <td class="align-middle name py-2 pe-2"><?php echo $row["sp_amount"]; ?></td>
                         <td class="align-middle name py-2 pe-2"><?php echo $row["status"]; ?></td>
                         <td>
-                      
-        </a>    
-        <a class="btn btn-falcon-default btn-sm mb-sm-0" href="../delete.php?productid=<?php echo base64_encode(base64_encode(base64_encode(base64_encode(base64_encode($row['id'])))))?>" type="button">
-                              <span class="fas fa-trash me-1"> </span>
-        </a>    
+                          <a class="btn btn-falcon-default btn-sm mb-sm-0" href="../delete.php?productid=<?php echo base64_encode(base64_encode(base64_encode(base64_encode(base64_encode($row['id'])))))?>" type="button">
+                                                <span class="fas fa-eye me-1"> </span>
+                          </a>    
+                          
+                          <a class="btn btn-falcon-default btn-sm mb-sm-0" href="../delete.php?productid=<?php echo base64_encode(base64_encode(base64_encode(base64_encode(base64_encode($row['id'])))))?>" type="button">
+                                                <span class="fas fa-trash me-1"> </span>
+                          </a>    
+
                         </td>
                      
                       </tr>

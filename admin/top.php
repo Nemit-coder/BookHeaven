@@ -16,7 +16,7 @@
             <a class="nav-link" href="<?php echo BASE_URL?>view/view.php?VxjMWVHUlhiSGxsVVQwOQ=<?php echo base64_encode(base64_encode(base64_encode('category')));?>" role="button"  aria-haspopup="true" aria-expanded="false">Category</a>
          </li>
          <li class="nav-item dropdown">
-            <a class="nav-link" href="<?php echo BASE_URL?>view/view.php?VxjMWVHUlhiSGxsVVQwOQ=<?php echo base64_encode(base64_encode(base64_encode('image')));?>" role="button"  aria-haspopup="true" aria-expanded="false">Product Image</a>
+            <a class="nav-link" href="<?php echo BASE_URL?>view/view.php?VxjMWVHUlhiSGxsVVQwOQ=<?php echo base64_encode(base64_encode(base64_encode('book')));?>" role="button"  aria-haspopup="true" aria-expanded="false">Product Image</a>
          </li>
          <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dashboards">Admission List</a>
