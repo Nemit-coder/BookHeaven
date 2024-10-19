@@ -38,13 +38,12 @@ else if(isset($_POST['insert_book'])) {
 		$amount = $_POST['amount'];
 		$spamount = $_POST['spamount'];
 
-		// $sql = "INSERT INTO tbl_book (`isbn`, `category`, `name`, `publisher`, `author`, `description`, `language`, `amount`, `sp_amount`) VALUES ($isbn,$category,$bookname,$publisher,$author,$description,$language,$amount,$spamount)";
-		$sql = "INSERT INTO tbl_book (`isbn`) VALUES ($isbn)";
+		$sql = "INSERT INTO tbl_book (`isbn`, `name`,`category`, `publisher`, `author`, `description`, `language`, `amount`, `sp_amount`) VALUES ('$isbn','$bookname','$category','$publisher','$author','$description','$language','$amount','$spamount')";
 		$result = mysqli_query($conn,$sql);
 
 		if($result){
 			echo "<script>alert('Book Inserted Successfully')</script>";
-			echo "<script>window.open('../view/product_image.php','_self')</script>";
+			echo "<script>window.open('../view/view.php?VxjMWVHUlhiSGxsVVQwOQ=$doc','_self')</script>";
 		}
 		else{
 			echo "<script>alert('Error Inserting Book')</script>";

@@ -38,12 +38,17 @@
                       <thead class="bg-body-tertiary">
                         <tr>
                         <th class="text-800 sort align-middle" data-sort="no">No</th>
-                          
-                         
-                        <th class="text-800 sort align-middle" data-sort="name">Category Name</th>
-                          
-                          <th class="text-800 sort align-middle" data-sort="name">Category</th>
-                          <th class="text-800 sort align-middle" data-sort="name">Action</th>
+                        <th class="text-800 sort align-middle" data-sort="name">ISBN</th>
+                        <th class="text-800 sort align-middle" data-sort="no">Name</th>
+                        <th class="text-800 sort align-middle" data-sort="name">Category</th>
+                        <th class="text-800 sort align-middle" data-sort="name">Publisher</th>
+                        <th class="text-800 sort align-middle" data-sort="name">Author</th>
+                        <th class="text-800 sort align-middle" data-sort="name">Description</th>
+                        <th class="text-800 sort align-middle" data-sort="name">Language</th>
+                        <th class="text-800 sort align-middle" data-sort="name">Amount</th>
+                        <th class="text-800 sort align-middle" data-sort="name">Special Amount</th>
+                        <th class="text-800 sort align-middle" data-sort="name">Status</th>
+                        <th class="text-800 sort align-middle" data-sort="name">Action</th>
                           
                         </tr>
                       </thead>
@@ -52,8 +57,16 @@
                       <tr>
                          
                         <td class="align-middle no py-2 pe-14"><?php echo $i; ?></td>
+                        <td class="align-middle name py-2 pe-2"><?php echo $row["isbn"]; ?></td>
                         <td class="align-middle name py-2 pe-2"><?php echo $row["name"]; ?></td>
-                        <td class="align-middle name py-2 pe-2"><img src="../uploads/<?php echo $row["category"];?>/<?php echo $row["stat_file"]; ?>" height="50" width="50"></td>
+                        <td class="align-middle name py-2 pe-2"><?php echo $row["category"]; ?></td>
+                        <td class="align-middle name py-2 pe-2"><?php echo $row["publisher"]; ?></td>
+                        <td class="align-middle name py-2 pe-2"><?php echo $row["author"]; ?></td>
+                        <td class="align-middle name py-2 pe-2"><?php echo $row["description"]; ?></td>
+                        <td class="align-middle name py-2 pe-2"><?php echo $row["language"]; ?></td>
+                        <td class="align-middle name py-2 pe-2"><?php echo $row["amount"]; ?></td>
+                        <td class="align-middle name py-2 pe-2"><?php echo $row["sp_amount"]; ?></td>
+                        <td class="align-middle name py-2 pe-2"><?php echo $row["status"]; ?></td>
                         <td>
                       
         </a>    
