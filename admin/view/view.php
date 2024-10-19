@@ -106,10 +106,10 @@
                    include 'category.php';
                  }
                 
-                 else if($vid2 == 'image')
+                 else if($vid2 == 'book')
                  {
                    $result = mysqli_query($conn,"SELECT * FROM tbl_book");
-                   include 'product_img.php';
+                   include 'book_list.php';
                  }
                 
                  

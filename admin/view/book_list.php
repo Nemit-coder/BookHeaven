@@ -22,10 +22,10 @@
                       <div class="bg-300 mx-3 d-none d-lg-block d-xl-none" style="width:1px; height:29px"></div>
                       
                       <div class="d-flex align-items-center" id="table-ticket-replace-element">
-                      <a class="btn btn-falcon-default btn-sm mx-2" href="<?php echo BASE_URL?>insert/insert.php?VxjMWVHUlhiSGxsVVQwOQ=<?php echo base64_encode(base64_encode(base64_encode('add_doc')));?>"type="button">
+                      <a class="btn btn-falcon-default btn-sm mx-2" href="<?php echo BASE_URL?>insert/insert.php?VxjMWVHUlhiSGxsVVQwOQ=<?php echo base64_encode(base64_encode(base64_encode('add_book')));?>"type="button">
                             <span class="fas fa-plus" data-fa-transform="shrink-3"></span>
                             <span class="d-none d-sm-inline-block ms-1">Add Book</span>
-        </a>
+                      </a>
                         
                       </div>
                     </div>

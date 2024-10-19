@@ -78,8 +78,8 @@ if(!isset($_SESSION["username"])){
           include 'category.php';
       }
       
-      else if($vid2 == 'add_doc'){
-          include 'doc.php';
+      else if($vid2 == 'add_book'){
+          include 'add_book.php';
       }
      
       else {
