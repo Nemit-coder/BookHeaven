@@ -87,7 +87,7 @@ $cnt=1;
            </div>
               <div>
              
-              <a class="btn btn-primary btn-sm me-2" type="button" href="">
+              <a class="btn btn-primary btn-sm me-2" type="button" href="<?php echo BASE_URL?>insert/insert.php?VxjMWVHUlhiSGxsVVQwOQ=<?php echo base64_encode(base64_encode(base64_encode('add_book_image')));?>">
                 <span class="far fa-file-pdf me-md-1"> </span>
                 <span class="d-none d-md-inline">Add Book Image</span>
                   </a>

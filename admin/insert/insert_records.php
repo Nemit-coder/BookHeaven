@@ -51,6 +51,44 @@ else if(isset($_POST['insert_book'])) {
 		}
 }
 
+
+else if(isset($_POST['insert_book_image'])) {
+
+    $category = $_POST['category'];
+
+    // Handle the file upload
+    $stat_file = $_FILES['stat_file']['name'];
+
+    // Create target directory based on 'enroll' if it doesn't exist
+    $target_dir = "../uploads/" . $category . "/";
+    if (!file_exists($target_dir)) {
+        mkdir($target_dir, 0777, true);
+    }
+
+    $target_file = $target_dir . basename($_FILES["stat_file"]["name"]);
+
+    // Select file type
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+    // Valid file extensions
+    $extensions_arr = array("jpg","jpeg","png","gif");
+
+    // Check extension
+    if( in_array($imageFileType,$extensions_arr) ){
+        // Upload file
+        if(move_uploaded_file($_FILES['stat_file']['tmp_name'],$target_file)){
+            // Insert record
+            $query = "INSERT INTO tbl_book_image (category, stat_file) values('".$category."','".$stat_file."')";
+            mysqli_query($conn,$query);
+			echo "<script> alert('Image Added successfully') </script>";
+			echo "<script>window.open('../view/view.php?VxjMWVHUlhiSGxsVVQwOQ=$book','_self')</script>";
+	
+        }
+    }
+}
+
+
+
 	else if (isset($_POST['insert_student_notice'])) {
 
 		$category = $_POST['category'];

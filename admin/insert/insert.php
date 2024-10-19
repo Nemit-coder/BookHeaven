@@ -82,8 +82,11 @@ if(!isset($_SESSION["username"])){
           include 'add_book.php';
       }
      
+      else if($vid2 == 'add_book_image'){
+        include 'add_book_image.php';
+    }
       else {
-      
+        echo 'Not Found';
       }
         ?>
           
