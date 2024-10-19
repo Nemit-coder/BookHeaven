@@ -1,13 +1,13 @@
 <?php
-  include 'include/db_connection.php';
+  include '../admin/include/connection.php';
 
   // Signin
   if(isset($_POST['signin'])){
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $sql="SELECT * FROM tbl_signup WHERE email='$email' AND password='$password' AND status=1 ";
-    $result=mysqli_query($connect_query,$sql);
+    $sql="SELECT * FROM tbl_user_signup WHERE email='$email' AND password='$password' AND status=1 ";
+    $result=mysqli_query($conn,$sql);
 
 
     if (mysqli_num_rows($result) > 0) {

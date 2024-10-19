@@ -1,13 +1,13 @@
 <?php
-    include 'include/db_connection.php';
+    include '../admin/include/connection.php';
 
     // New user signup
     if(isset($_POST['create_account'])){
       $email = $_POST['email'];
       $password = $_POST['password'];
   
-      $exist="SELECT * FROM tbl_signup WHERE email='$email' AND status=1 ";
-      $result = mysqli_query($connect_query,$exist);
+      $exist="SELECT * FROM tbl_user_signup WHERE email='$email' AND status=1 ";
+      $result = mysqli_query($conn,$exist);
       $numRows = mysqli_num_rows($result);
   
       if($numRows > 0){
@@ -18,8 +18,8 @@
       else{
           session_start();
           $_SESSION['signup'] = true;
-          $sql = "INSERT INTO tbl_signup (email,password) VALUES ('$email','$password')";
-          $result = mysqli_query($connect_query,$sql);
+          $sql = "INSERT INTO tbl_user_signup (email,password) VALUES ('$email','$password')";
+          $result = mysqli_query($conn,$sql);
   
           if($result){
               echo "<script>alert('Account Created Successfully')</script>";
