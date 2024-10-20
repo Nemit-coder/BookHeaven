@@ -83,7 +83,7 @@
                         </td>
                         <!-- <td class="align-middle name py-2 pe-2"><?php echo $row["status"]; ?></td> -->
                         <td>
-                          <a class="btn btn-falcon-default btn-sm mb-sm-0" href="book-details.php?bookid=<?php echo base64_encode(base64_encode(base64_encode(base64_encode(base64_encode($row['id'])))))?>" type="button">
+                          <a class="btn btn-falcon-default btn-sm mb-sm-0" href="book-details.php?isbn=<?php echo base64_encode(base64_encode(base64_encode(base64_encode(base64_encode($row['isbn'])))))?>" type="button">
                                                 <span class="fas fa-eye me-1"> </span>
                           </a>    
                           

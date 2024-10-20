@@ -8,8 +8,8 @@ if(!isset($_SESSION["username"])){
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en-US" dir="ltr">
 <?php 
-  $book_id = base64_decode(base64_decode(base64_decode(base64_decode(base64_decode($_GET['bookid'])))));
-  $sql = "SELECT * FROM tbl_book INNER JOIN tbl_category ON tbl_book.category_id=tbl_category.category_id WHERE id='$book_id'";
+  $isbn = base64_decode(base64_decode(base64_decode(base64_decode(base64_decode($_GET['isbn'])))));
+  $sql = "SELECT * FROM tbl_book INNER JOIN tbl_category ON tbl_book.category_id=tbl_category.category_id WHERE isbn='$isbn'";
   $result = mysqli_query($conn,$sql);
   $row = mysqli_fetch_array($result);
 $cnt=1;
@@ -87,7 +87,7 @@ $cnt=1;
            </div>
               <div>
              
-              <a class="btn btn-primary btn-sm me-2" type="button" href="<?php echo BASE_URL?>insert/insert.php?VxjMWVHUlhiSGxsVVQwOQ=<?php echo base64_encode(base64_encode(base64_encode('add_book_image')));?>&bookid=<?php echo $book_id ?>">
+              <a class="btn btn-primary btn-sm me-2" type="button" href="<?php echo BASE_URL?>insert/insert.php?VxjMWVHUlhiSGxsVVQwOQ=<?php echo base64_encode(base64_encode(base64_encode('add_book_image')));?>&isbn=<?php echo $isbn ?>">
                 <span class="far fa-file-pdf me-md-1"> </span>
                 <span class="d-none d-md-inline">Add Book Image</span>
                   </a>

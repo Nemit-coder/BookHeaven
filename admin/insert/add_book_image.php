@@ -33,15 +33,16 @@
                         <option value="imported" selected disabled>Select Category</option> -->
                         <?php
                                           //  include '../include/connection.php';         
-                                           $book_id = $_GET['bookid'];
-                                          $sql = mysqli_query($conn, "SELECT * From tbl_book WHERE id=$book_id"); 
+                                           $isbn = $_GET['isbn'];
+                                          $sql = mysqli_query($conn, "SELECT * From tbl_book WHERE isbn=$isbn"); 
                                           $records = mysqli_fetch_array($sql);
                                          ?>
                                           <!-- Display the name -->
-                                          <input type="text" class="form-control" value="<?php echo htmlspecialchars($records['name']); ?>" readonly>
+                                          <input type="text" class="form-control"value="<?php echo htmlspecialchars($records['name']); ?>" readonly>
 
-                                          <!-- Hidden input for the ID -->
-                                          <input type="hidden" name="record_id" value="<?php echo htmlspecialchars($records['id']); ?>">
+                                          <!-- Hidden input for the isbn and category id-->
+                                          <input type="hidden" name="category_id" value="<?php echo htmlspecialchars($records['category_id']); ?>">
+                                          <input type="hidden" name="isbn" value="<?php echo htmlspecialchars($records['isbn']); ?>">
 
 
                                          <?php

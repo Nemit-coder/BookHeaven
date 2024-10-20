@@ -1,7 +1,7 @@
 <?php include '../include/connection.php';
 session_start();
-$faname = $_SESSION["first_name"];
-$laname = $_SESSION["last_name"];
+// $faname = $_SESSION["first_name"];
+// $laname = $_SESSION["last_name"];
 
 $category= base64_encode(base64_encode(base64_encode('category')));
 $book= base64_encode(base64_encode(base64_encode('book')));
@@ -54,7 +54,8 @@ else if(isset($_POST['insert_book'])) {
 
 else if(isset($_POST['insert_book_image'])) {
 
-    $category = $_POST['record_id'];
+    $isbn = $_POST['isbn'];
+    $category = $_POST['category_id'];
 
     // Handle the file upload
     $stat_file = $_FILES['stat_file']['name'];
@@ -78,7 +79,7 @@ else if(isset($_POST['insert_book_image'])) {
         // Upload file
         if(move_uploaded_file($_FILES['stat_file']['tmp_name'],$target_file)){
             // Insert record
-            $query = "INSERT INTO tbl_book_image (category, stat_file) values('".$category."','".$stat_file."')";
+            $query = "INSERT INTO tbl_book_image (isbn,category_id, stat_file) values('$isbn','".$category."','".$stat_file."')";
             mysqli_query($conn,$query);
 			echo "<script> alert('Image Added successfully') </script>";
 			echo "<script>window.open('../view/view.php?VxjMWVHUlhiSGxsVVQwOQ=$book','_self')</script>";

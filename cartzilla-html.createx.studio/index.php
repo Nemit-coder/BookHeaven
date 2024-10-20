@@ -592,12 +592,12 @@
             <div class="scroll-container">
               <?php
                 include '../admin/include/connection.php';
-                $sql = "SELECT * FROM tbl_book INNER JOIN tbl_category ON tbl_book.category_id=tbl_category.category_id";
+                $sql = "SELECT * FROM tbl_book INNER JOIN tbl_category ON tbl_book.category_id=tbl_category.category_id INNER JOIN tbl_book_image ON tbl_book.isbn=tbl_book_image.isbn";
                 $result = mysqli_query($conn,$sql);
                 while($row = mysqli_fetch_assoc($result)){
               ?>
-                <div class="card book-card" style="width: 18rem;">
-                    <img src="assets/img/books/c.j_box.webp" class="card-img-top book-img" alt="Book 1">
+                <div class="card book-card" style="width: 19rem;">
+                    <img src="../admin/uploads/<?php echo $row["category_id"];?>/<?php echo $row["stat_file"]; ?>" class="card-img-top book-img" alt="Book 1" style="width: 100%; height: 300px;">
                     <div class="card-body">
                         <h5 class="book-title"><?php echo $row['name'] ?></h5>
                         <p class="book-author"><?php echo $row['author'] ?></p>
@@ -609,72 +609,8 @@
                 <?php
                 }
                 ?>
-
-                <!-- <div class="card book-card" style="width: 18rem;">
-                    <img src="assets/img/books/c.j_box.webp" class="card-img-top book-img" alt="Book 2">
-                    <div class="card-body">
-                        <h5 class="book-title">Book Title 2</h5>
-                        <p class="book-author">Author Name 2</p>
-                        <p class="book-price">$24.99</p>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
-                    </div>
-                </div>
-                <div class="card book-card" style="width: 18rem;">
-                    <img src="assets/img/books/c.j_box.webp" class="card-img-top book-img" alt="Book 3">
-                    <div class="card-body">
-                        <h5 class="book-title">Book Title 3</h5>
-                        <p class="book-author">Author Name 3</p>
-                        <p class="book-price">$15.99</p>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
-                    </div>
-                </div>
-                <div class="card book-card" style="width: 18rem;">
-                    <img src="assets/img/books/c.j_box.webp" class="card-img-top book-img" alt="Book 4">
-                    <div class="card-body">
-                        <h5 class="book-title">Book Title 4</h5>
-                        <p class="book-author">Author Name 4</p>
-                        <p class="book-price">$22.99</p>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
-                    </div>
-                </div>
-                <div class="card book-card" style="width: 18rem;">
-                    <img src="assets/img/books/c.j_box.webp" class="card-img-top book-img" alt="Book 5">
-                    <div class="card-body">
-                        <h5 class="book-title">Book Title 5</h5>
-                        <p class="book-author">Author Name 5</p>
-                        <p class="book-price">$19.99</p>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
-                    </div>
-                </div>
-                <div class="card book-card" style="width: 18rem;">
-                    <img src="assets/img/books/c.j_box.webp" class="card-img-top book-img" alt="Book 6">
-                    <div class="card-body">
-                        <h5 class="book-title">Book Title 6</h5>
-                        <p class="book-author">Author Name 6</p>
-                        <p class="book-price">$24.99</p>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
-                    </div>
-                </div>
-                <div class="card book-card" style="width: 18rem;">
-                    <img src="assets/img/books/c.j_box.webp" class="card-img-top book-img" alt="Book 7">
-                    <div class="card-body">
-                        <h5 class="book-title">Book Title 7</h5>
-                        <p class="book-author">Author Name 7</p>
-                        <p class="book-price">$15.99</p>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
-                    </div>
-                </div>
-                <div class="card book-card" style="width: 18rem;">
-                    <img src="assets/img/books/c.j_box.webp" class="card-img-top book-img" alt="Book 8">
-                    <div class="card-body">
-                        <h5 class="book-title">Book Title 8</h5>
-                        <p class="book-author">Author Name 8</p>
-                        <p class="book-price">$22.99</p>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
-                    </div>
-                </div> -->
-            </div>
-            <button class="scroll-button right btn btn-primary ml-3" onclick="scrollRight()">›</button>
+              </div>
+              <button class="scroll-button right btn btn-primary ml-3" onclick="scrollRight()">›</button>
         </div>
     </div>
 
