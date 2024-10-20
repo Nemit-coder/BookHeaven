@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
 
     <!-- SEO Meta Tags -->
-    <title>Book Heaven || For Book Lovers</title>
+    <title>Fiction - Category ||Book Heaven || For Book Lovers</title>
     <meta name="description" content="Cartzilla - Multipurpose Bootstrap E-Commerce HTML Template">
     <meta name="keywords" content="online shop, e-commerce, online store, market, multipurpose, product landing, cart, checkout, ui kit, light and dark mode, bootstrap, html5, css3, javascript, gallery, slider, mobile, pwa">
     <meta name="author" content="Createx Studio">
@@ -451,138 +451,10 @@
       <!-- Hero (Demos) -->
       <section class="pt-1 pt-sm-1 mt-1 mt-sm-0">
 
-        <!-- Carousel -->
-        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="assets/img/book1.jpg" class="d-block w-50px" alt="..." height="60px">
-            </div>
-            <div class="carousel-item">
-              <img src="assets/img/book2.jpg" class="d-block w-50px" alt="..." height="60px">
-            </div>
-            <div class="carousel-item">
-              <img src="assets/img/book3.jpg" class="d-block w-50px" alt="..." height="60px">
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
+        
 
 
-        <!-- Grid -->
-        <div class="container-fluid d-flex flex-column gap-4 my-5" style="max-width: 1456px">
-          <div class="d-flex flex-column flex-md-row gap-4">
-
-            <!-- Furniture store -->
-            <div class="hover-effect-scale ratio" id="furniture" style="--cz-transform-scale: 1.03; --cz-transition-duration: .3s">
-              <div class="nav flex-column position-absolute top-0 start-0 w-100 h-100 z-2 pt-4 pt-xl-5 px-4 ps-xl-5 mt-lg-2 ms-lg-2 m-xl-0">
-                <h2 class="h3 d-none d-lg-block pb-2 mb-1">Fictional</h2>
-                <h2 class="h4 d-lg-none mb-2">Fictional</h2>
-                <p class="fs-xs mb-2 mb-xl-3 d-none d-sm-block d-md-none d-lg-block" style="max-width: 250px">Unleash the Thriller and Fictional part of books.</p>
-                <a class="nav-link animate-underline stretched-link text-dark-emphasis py-1 px-0" href="home-furniture.html">
-                  <span class="animate-target">View</span>
-                  <i class="ci-chevron-right fs-base mt-1 ms-1"></i>
-                </a>
-              </div>
-              <div class="hover-effect-target d-flex align-items-end h-100 overflow-hidden rounded-5">
-                <div class="position-relative z-1 rtl-flip">
-                  <img src="assets/img/simple_book.jpg" class="hover-effect-target d-none-dark" width="773" alt="Furniture Store" style="object-fit:cover;">
-                </div>
-                <span class="bg-body-secondary position-absolute top-0 start-0 w-100 h-100 d-none-dark"></span>
-                <span class="bg-dark position-absolute top-0 start-0 w-100 h-100 d-none d-block-dark"></span>
-              </div>
-            </div>
-
-            <!-- Grocery store -->
-            <div class="hover-effect-scale ratio" id="grocery" style="--cz-transform-scale: 1.03; --cz-transition-duration: .3s">
-              <div class="nav flex-column position-absolute top-0 start-0 w-100 h-100 z-2 pt-4 pt-xl-5 px-4 ps-xl-5 mt-lg-2 ms-lg-2 m-xl-0">
-                <h2 class="h3 text-white d-none d-lg-block pb-2 mb-1">Non-Fictional</h2>
-                <h2 class="h4 text-white d-lg-none mb-2">Non-Fictional</h2>
-                <p class="text-white opacity-75 fs-xs mb-2 mb-xl-3 d-none d-sm-block d-md-none d-lg-block" style="max-width: 250px">Dive into the world of Reality.</p>
-                <a class="nav-link animate-underline stretched-link text-white py-1 px-0" href="home-grocery.html">
-                  <span class="animate-target">View</span>
-                  <i class="ci-chevron-right fs-base mt-1 ms-1"></i>
-                </a>
-              </div>
-              <div class="hover-effect-target d-flex align-items-end justify-content-end h-100 overflow-hidden rounded-5">
-                <div class="position-relative z-1 rtl-flip">
-                  <img src="assets/img/non-fictional2.webp" class="hover-effect-target d-none-dark" width="627" alt="Grocery Store">
-                </div>
-                <span class="position-absolute top-0 start-0 w-100 h-100 d-none-dark" style="background-color: #708b88;"></span>
-                <span class="position-absolute top-0 start-0 w-100 h-100 d-none d-block-dark" style="background-color: #49595a;"></span>
-              </div>
-            </div>
-          </div>
-          <div class="d-flex flex-column flex-md-row gap-4">
-
-            <!-- Fashion store v.1 -->
-            <div class="hover-effect-scale ratio" id="fashion-1" style="--cz-transform-scale: 1.03; --cz-transition-duration: .3s">
-              <div class="nav flex-column position-absolute top-0 start-0 w-100 h-100 z-2 pt-4 pt-xl-5 px-4 ps-xl-5 mt-lg-2 ms-lg-2 m-xl-0">
-                <h2 class="h3 text-white d-none d-lg-block pb-2 mb-1">Fashion Store v.1</h2>
-                <h2 class="h4 text-white d-lg-none mb-2">Fashion Store v.1</h2>
-                <p class="text-white opacity-75 fs-xs mb-2 mb-xl-3 d-none d-sm-block d-md-none d-lg-block" style="max-width: 250px">Discover the newest trends in fashion with our exclusive designer wear.</p>
-                <a class="nav-link animate-underline stretched-link text-white py-1 px-0" href="home-fashion-v1.html">
-                  <span class="animate-target">View demo</span>
-                  <i class="ci-chevron-right fs-base mt-1 ms-1"></i>
-                </a>
-              </div>
-              <div class="hover-effect-target d-flex align-items-end justify-content-end h-100 overflow-hidden rounded-5">
-                <div class="position-relative z-1 rtl-flip">
-                  <img src="assets/img/intro/demos/fashion-1-light.png" class="hover-effect-target d-none-dark" width="370" alt="Fashion Store v.1">
-                  <img src="assets/img/intro/demos/fashion-1-dark.png" class="hover-effect-target d-none d-block-dark" width="370" alt="Fashion Store v.1">
-                </div>
-                <span class="position-absolute top-0 start-0 w-100 h-100" style="background-color: #333d4c;"></span>
-              </div>
-            </div>
-
-            <!-- Electronics store -->
-            <div class="hover-effect-scale ratio" id="electronics" style="--cz-transform-scale: 1.03; --cz-transition-duration: .3s">
-              <div class="nav flex-column position-absolute top-0 start-0 w-100 h-100 z-2 pt-4 pt-xl-5 px-4 ps-xl-5 mt-lg-2 ms-lg-2 m-xl-0">
-                <h2 class="h3 d-none d-lg-block pb-2 mb-1">Comics</h2>
-                <h2 class="h4 d-lg-none mb-2">Comics</h2>
-                <p class="fs-xs mb-2 mb-xl-3 d-none d-sm-block d-md-none d-lg-block" style="max-width: 250px">Get a Comic and Groom.</p>
-                <a class="nav-link animate-underline stretched-link text-dark-emphasis py-1 px-0" href="home-electronics.html">
-                  <span class="animate-target">View</span>
-                  <i class="ci-chevron-right fs-base mt-1 ms-1"></i>
-                </a>
-              </div>
-              <div class="hover-effect-target d-flex align-items-end justify-content-end h-100 overflow-hidden rounded-5">
-                <div class="position-relative z-1 rtl-flip">
-                  <img src="assets/img/comic-book.jpg" class="hover-effect-target d-none-dark" width="540" alt="Electronics Store">
-                </div>
-                <span class="position-absolute top-0 start-0 w-100 h-100 d-none-dark" style="background-color: #ccdff5;"></span>
-                <span class="position-absolute top-0 start-0 w-100 h-100 d-none d-block-dark" style="background-color: #212c3d;"></span>
-              </div>
-            </div>
-
-            <!-- Fashion store v.2 -->
-            <div class="hover-effect-scale ratio" id="fashion-2" style="--cz-transform-scale: 1.03; --cz-transition-duration: .3s">
-              <div class="nav flex-column position-absolute top-0 start-0 w-100 h-100 z-2 pt-4 pt-xl-5 px-4 ps-xl-5 mt-lg-2 ms-lg-2 m-xl-0">
-                <h2 class="h3 d-none d-lg-block pb-2 mb-1">Fashion Store v.2</h2>
-                <h2 class="h4 d-lg-none mb-2">Fashion Store v.2</h2>
-                <p class="fs-xs mb-2 mb-xl-3 d-none d-sm-block d-md-none d-lg-block" style="max-width: 250px">Unleash your style with our versatile and affordable fashion finds.</p>
-                <a class="nav-link animate-underline stretched-link text-dark-emphasis py-1 px-0" href="home-fashion-v2.html">
-                  <span class="animate-target">View demo</span>
-                  <i class="ci-chevron-right fs-base mt-1 ms-1"></i>
-                </a>
-              </div>
-              <div class="hover-effect-target d-flex align-items-end justify-content-end h-100 overflow-hidden rounded-5">
-                <div class="position-relative z-1 rtl-flip">
-                  <img src="assets/img/intro/demos/fashion-2-light.png" class="hover-effect-target d-none-dark" width="466" alt="Fashion Store v.2">
-                  <img src="assets/img/intro/demos/fashion-2-dark.png" class="hover-effect-target d-none d-block-dark" width="466" alt="Fashion Store v.2">
-                </div>
-                <span class="position-absolute top-0 start-0 w-100 h-100 d-none-dark" style="background-color: #f3eef3;"></span>
-                <span class="position-absolute top-0 start-0 w-100 h-100 d-none d-block-dark" style="background-color: #35313a;"></span>
-              </div>
-            </div>
-          </div>
-        </div>
+        
       </section>
 
 
