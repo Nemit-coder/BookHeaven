@@ -35,14 +35,14 @@
                   <div class="row gx-2">
                       <div class="col-6 mb-2">
                         <label class="form-label" for="product-name">Category:</label>
-                        <select name="category" id="" class="form-select">
-                          <option desabled selected>Category</option>
+                        <select name="category_id" id="" class="form-select">
+                          <option disabled selected>Category</option>
                           <?php
                                 include '../include/connection.php';
-                                $result = mysqli_query($conn,"SELECT * FROM tbl_category ORDER BY id DESC");
+                                $result = mysqli_query($conn,"SELECT * FROM tbl_category");
                                 while($row = mysqli_fetch_array($result))
                                 {?>
-                                  <option  value='<?php echo $row['category_name'] ?>'><?php echo $row['category_name'] ?></option>
+                                  <option  value='<?php echo $row['category_id'] ?>'><?php echo $row['category_name'] ?></option>
                                  <?php 
                                 }
                                 mysqli_close($conn);

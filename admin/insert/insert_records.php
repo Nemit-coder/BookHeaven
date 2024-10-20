@@ -29,8 +29,8 @@ $book= base64_encode(base64_encode(base64_encode('book')));
 else if(isset($_POST['insert_book'])) {
 		// Taking Inputs
 		$isbn = $_POST['isbn'];
+		$category_id = $_POST['category_id'];
 		$bookname = $_POST['bookname'];
-		$category = $_POST['category'];
 		$publisher = $_POST['publisher'];
 		$author = $_POST['author'];
 		$description = $_POST['description'];
@@ -38,7 +38,7 @@ else if(isset($_POST['insert_book'])) {
 		$amount = $_POST['amount'];
 		$spamount = $_POST['spamount'];
 
-		$sql = "INSERT INTO tbl_book (`isbn`, `name`,`category`, `publisher`, `author`, `description`, `language`, `amount`, `sp_amount`) VALUES ('$isbn','$bookname','$category','$publisher','$author','$description','$language','$amount','$spamount')";
+		$sql = "INSERT INTO tbl_book (`isbn`,`category_id`, `name`, `publisher`, `author`, `description`, `language`, `amount`, `sp_amount`) VALUES ('$isbn','$category_id','$bookname','$publisher','$author','$description','$language','$amount','$spamount')";
 		$result = mysqli_query($conn,$sql);
 
 		if($result){
@@ -54,7 +54,7 @@ else if(isset($_POST['insert_book'])) {
 
 else if(isset($_POST['insert_book_image'])) {
 
-    $category = $_POST['category'];
+    $category = $_POST['record_id'];
 
     // Handle the file upload
     $stat_file = $_FILES['stat_file']['name'];

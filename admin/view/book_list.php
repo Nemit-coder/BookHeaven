@@ -59,7 +59,7 @@
                         <td class="align-middle no py-2 pe-14"><?php echo $i; ?></td>
                         <td class="align-middle name py-2 pe-2"><?php echo $row["isbn"]; ?></td>
                         <td class="align-middle name py-2 pe-2"><?php echo $row["name"]; ?></td>
-                        <td class="align-middle name py-2 pe-2"><?php echo $row["category"]; ?></td>
+                        <td class="align-middle name py-2 pe-2"><?php echo $row["category_name"]; ?></td>
                         <td class="align-middle name py-2 pe-2"><?php echo $row["publisher"]; ?></td>
                         <td class="align-middle name py-2 pe-2"><?php echo $row["author"]; ?></td>
                         <td class="align-middle name py-2 pe-2"><?php echo $row["description"]; ?></td>

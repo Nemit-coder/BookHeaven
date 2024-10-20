@@ -1,5 +1,4 @@
 <div class="content">
-          
           <div class="card mb-3">
             <div class="card-body">
             <form action="insert_records.php" method="post" enctype='multipart/form-data'>
@@ -30,18 +29,25 @@
                      
                       <div class="col-6 mb-2">
                         <label class="form-label" for="manufacturar-name">Category Name:</label>
-                        <select class="form-select" id="import-status" name="category">
-                        <option value="imported" selected disabled>Select Category</option>
+                        <!-- <select class="form-select" id="import-status" name="category">
+                        <option value="imported" selected disabled>Select Category</option> -->
                         <?php
-                                           include '../include/connection.php';                 
-                                          $records = mysqli_query($conn, "SELECT * From tbl_category order by id desc"); 
-                                          while($data = mysqli_fetch_array($records))
-                                          {?>
-                                            <option value='<?php echo $data['id'] ?>'><?php echo $data['category_name'] ?></option>";
-                                          <?php } 
+                                          //  include '../include/connection.php';         
+                                           $book_id = $_GET['bookid'];
+                                          $sql = mysqli_query($conn, "SELECT * From tbl_book WHERE id=$book_id"); 
+                                          $records = mysqli_fetch_array($sql);
+                                         ?>
+                                          <!-- Display the name -->
+                                          <input type="text" class="form-control" value="<?php echo htmlspecialchars($records['name']); ?>" readonly>
+
+                                          <!-- Hidden input for the ID -->
+                                          <input type="hidden" name="record_id" value="<?php echo htmlspecialchars($records['id']); ?>">
+
+
+                                         <?php
                                             mysqli_close($conn);
                                         ?>  
-                        </select>   
+                        <!-- </select>    -->
                      </div>
                   </div>
 

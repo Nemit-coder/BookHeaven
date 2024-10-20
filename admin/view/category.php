@@ -71,10 +71,10 @@
                         }
                         ?></td> 
                         <td>
-                        <a class="btn btn-falcon-default btn-sm mb-sm-0" href="update_status.php?productid=<?php echo base64_encode(base64_encode(base64_encode(base64_encode(base64_encode($row['id'])))));?>" type="button">
+                        <a class="btn btn-falcon-default btn-sm mb-sm-0" href="update_status.php?productid=<?php echo base64_encode(base64_encode(base64_encode(base64_encode(base64_encode($row['category_id'])))));?>" type="button">
                               <span class="fas fa-trash me-1"> </span>
         </a>   
-        <a class="btn btn-falcon-default btn-sm mb-sm-0" href="profile.php?viewid=<?php echo base64_encode(base64_encode(base64_encode(base64_encode(base64_encode($row['id'])))));?>" type="button">
+        <a class="btn btn-falcon-default btn-sm mb-sm-0" href="profile.php?viewid=<?php echo base64_encode(base64_encode(base64_encode(base64_encode(base64_encode($row['category_id'])))));?>" type="button">
                               <span class="fas fa-plus me-1"> </span>
         </a>    
                         </td>

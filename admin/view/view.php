@@ -102,13 +102,13 @@
                
                  if(base64_decode(base64_decode(base64_decode($_GET['VxjMWVHUlhiSGxsVVQwOQ']))) == 'category')
                  {
-                   $result = mysqli_query($conn,"SELECT * FROM tbl_category ORDER BY id DESC");
+                   $result = mysqli_query($conn,"SELECT * FROM tbl_category");
                    include 'category.php';
                  }
                 
                  else if($vid2 == 'book')
                  {
-                   $result = mysqli_query($conn,"SELECT * FROM tbl_book");
+                   $result = mysqli_query($conn,"SELECT * FROM tbl_book INNER JOIN tbl_category ON tbl_book.category_id=tbl_category.category_id");
                    include 'book_list.php';
                  }
                 

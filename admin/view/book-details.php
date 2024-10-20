@@ -9,7 +9,7 @@ if(!isset($_SESSION["username"])){
 <html data-bs-theme="light" lang="en-US" dir="ltr">
 <?php 
   $book_id = base64_decode(base64_decode(base64_decode(base64_decode(base64_decode($_GET['bookid'])))));
-  $sql = "SELECT * FROM tbl_book WHERE id='$book_id'";
+  $sql = "SELECT * FROM tbl_book INNER JOIN tbl_category ON tbl_book.category_id=tbl_category.category_id WHERE id='$book_id'";
   $result = mysqli_query($conn,$sql);
   $row = mysqli_fetch_array($result);
 $cnt=1;
@@ -87,7 +87,7 @@ $cnt=1;
            </div>
               <div>
              
-              <a class="btn btn-primary btn-sm me-2" type="button" href="<?php echo BASE_URL?>insert/insert.php?VxjMWVHUlhiSGxsVVQwOQ=<?php echo base64_encode(base64_encode(base64_encode('add_book_image')));?>">
+              <a class="btn btn-primary btn-sm me-2" type="button" href="<?php echo BASE_URL?>insert/insert.php?VxjMWVHUlhiSGxsVVQwOQ=<?php echo base64_encode(base64_encode(base64_encode('add_book_image')));?>&bookid=<?php echo $book_id ?>">
                 <span class="far fa-file-pdf me-md-1"> </span>
                 <span class="d-none d-md-inline">Add Book Image</span>
                   </a>
@@ -122,7 +122,7 @@ $cnt=1;
                           </tr>
                           <tr>
                             <td class="p-1" style="width: 15%;">Category :</td>
-                            <td class="p-1"><a class="text-600 text-decoration-none"><?php echo $row['category'] ?></a></td>
+                            <td class="p-1"><a class="text-600 text-decoration-none"><?php echo $row['category_name'] ?></a></td>
                           </tr>
                           <tr>
                             <td class="p-1" style="width: 35%;">Publisher :</td>
