@@ -43,10 +43,8 @@
                         <th class="text-800 sort align-middle" data-sort="name">Category</th>
                         <th class="text-800 sort align-middle" data-sort="name">Publisher</th>
                         <th class="text-800 sort align-middle" data-sort="name">Author</th>
-                        <th class="text-800 sort align-middle" data-sort="name">Description</th>
                         <th class="text-800 sort align-middle" data-sort="name">Language</th>
                         <th class="text-800 sort align-middle" data-sort="name">Amount</th>
-                        <th class="text-800 sort align-middle" data-sort="name">Special Amount</th>
                         <th class="text-800 sort align-middle" data-sort="name">Status</th>
                         <th class="text-800 sort align-middle" data-sort="name">Action</th>
                           
@@ -62,10 +60,8 @@
                         <td class="align-middle name py-2 pe-2"><?php echo $row["category_name"]; ?></td>
                         <td class="align-middle name py-2 pe-2"><?php echo $row["publisher"]; ?></td>
                         <td class="align-middle name py-2 pe-2"><?php echo $row["author"]; ?></td>
-                        <td class="align-middle name py-2 pe-2"><?php echo $row["description"]; ?></td>
                         <td class="align-middle name py-2 pe-2"><?php echo $row["language"]; ?></td>
                         <td class="align-middle name py-2 pe-2"><?php echo $row["amount"]; ?></td>
-                        <td class="align-middle name py-2 pe-2"><?php echo $row["sp_amount"]; ?></td>
                         <td>
                         <?php if($row['status'] == 1) { ?>
                             <span class="badge rounded-pill badge-subtle-success me-2"><span>

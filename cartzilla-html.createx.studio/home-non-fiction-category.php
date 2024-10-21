@@ -5,7 +5,7 @@
               <!-- Item -->
               <?php
                         include '../admin/include/connection.php';
-                        $sql = "SELECT * FROM tbl_book INNER JOIN tbl_category ON tbl_book.category_id=tbl_category.category_id INNER JOIN tbl_book_image ON tbl_book.isbn=tbl_book_image.isbn WHERE category_name='fiction' AND type='front'";
+                        $sql = "SELECT * FROM tbl_book INNER JOIN tbl_category ON tbl_book.category_id=tbl_category.category_id INNER JOIN tbl_book_image ON tbl_book.isbn=tbl_book_image.isbn WHERE category_name='non-fiction' AND  type='front'";
                         $result = mysqli_query($conn,$sql);
                         while($row = mysqli_fetch_assoc($result)){
               ?>   

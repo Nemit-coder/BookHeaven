@@ -11,10 +11,6 @@
     <meta name="keywords" content="online shop, e-commerce, online store, market, multipurpose, product landing, cart, checkout, ui kit, light and dark mode, bootstrap, html5, css3, javascript, gallery, slider, mobile, pwa">
     <meta name="author" content="Createx Studio">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> -->
-
-
     <!-- Webmanifest + Favicon / App icons -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -43,66 +39,6 @@
 
     <!-- Customizer -->
     <script src="assets/js/customizer.min.js"></script>
-
-    <!-- Page specific styles -->
-    <style>
-      #furniture {
-        --cz-aspect-ratio: calc(398 / 773 * 100%);
-        max-width: 773px;
-      }
-      #grocery {
-        --cz-aspect-ratio: calc(398 / 627 * 100%);
-        max-width: 627px;
-      }
-      #fashion-1 {
-        --cz-aspect-ratio: calc(398 / 370 * 100%);
-        max-width: 370px;
-      }
-      #electronics {
-        --cz-aspect-ratio: calc(398 / 540 * 100%);
-        max-width: 540px;
-      }
-      #fashion-2 {
-        --cz-aspect-ratio: calc(398 / 466 * 100%);
-        max-width: 466px;
-      }
-      @media (max-width: 767px) {
-        #furniture,
-        #grocery,
-        #fashion-1,
-        #electronics,
-        #fashion-2 {
-          --cz-aspect-ratio: calc(400 / 735 * 100%);
-          max-width: 100%;
-        }
-      }
-      @media (max-width: 650px) {
-        #furniture {
-          --cz-aspect-ratio: calc(398 / 627 * 100%);
-        }
-        #grocery {
-          --cz-aspect-ratio: calc(398 / 627 * 100%);
-        }
-        #fashion-1 {
-          --cz-aspect-ratio: calc(398 / 627 * 100%);
-        }
-        #electronics {
-          --cz-aspect-ratio: calc(398 / 627 * 100%);
-        }
-        #fashion-2 {
-          --cz-aspect-ratio: calc(398 / 627 * 100%);
-        }
-      }
-      @media (max-width: 540px) {
-        #fashion-1 {
-          --cz-aspect-ratio: calc(398 / 500 * 100%);
-        }
-        #fashion-2 {
-          --cz-aspect-ratio: calc(398 / 500 * 100%);
-        }
-      }
-    </style>
-
   </head>
 
 
@@ -217,145 +153,73 @@
     </div>
 
 
-    <?php
-        include 'include/nav.php';
-    ?>
     
+  <?php
+    include 'include/nav.php';
+  ?>
+
 
     <!-- Page content -->
     <main class="content-wrapper">
 
-      <!-- Hero (Demos) -->
-      <section class="pt-1 pt-sm-1 mt-1 mt-sm-0">
+      <!-- Breadcrumb -->
+      <nav class="container pt-3 my-3 my-md-4" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="home-electronics.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Catalog with sidebar filters</li>
+        </ol>
+      </nav>
 
-        <!-- Carousel -->
-        <!-- <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="assets/img/book1.jpg" class="d-block w-50px" alt="..." height="60px">
-            </div>
-            <div class="carousel-item">
-              <img src="assets/img/book2.jpg" class="d-block w-50px" alt="..." height="60px">
-            </div>
-            <div class="carousel-item">
-              <img src="assets/img/book3.jpg" class="d-block w-50px" alt="..." height="60px">
-            </div>
+
+      <!-- Page title -->
+      <h1 class="h3 container mb-4">Shop catalog</h1>
+
+
+      <!-- Banners that are turned into collaspse on screens < 768px wide (sm breakpoint) -->
+      <section class="accordion container pb-4 pb-md-5 mb-xl-3">
+        <div class="accordion-item border-0">
+          <div class="accordion-header d-md-none" id="offersHeading">
+            <button type="button" class="accordion-button w-auto fw-medium collapsed border border-dashed border-danger border-opacity-50 rounded py-2 px-3" data-bs-toggle="collapse" data-bs-target="#offers" aria-expanded="false" aria-controls="offers">
+              <span class="d-inline-flex ci-percent fs-lg text-danger rounded-circle me-2"></span>
+              <span class="me-2">See latest offers</span>
+            </button>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div> -->
-
-
-        <!-- Grid -->
-        <div class="container-fluid d-flex flex-column gap-4 my-5" style="max-width: 1456px">
-          <div class="d-flex flex-column flex-md-row gap-4">
-
-            <!-- Furniture store -->
-            <div class="hover-effect-scale ratio" id="furniture" style="--cz-transform-scale: 1.03; --cz-transition-duration: .3s">
-              <div class="nav flex-column position-absolute top-0 start-0 w-100 h-100 z-2 pt-4 pt-xl-5 px-4 ps-xl-5 mt-lg-2 ms-lg-2 m-xl-0">
-                <h2 class="h3 d-none d-lg-block pb-2 mb-1">Fictional</h2>
-                <h2 class="h4 d-lg-none mb-2">Fictional</h2>
-                <p class="fs-xs mb-2 mb-xl-3 d-none d-sm-block d-md-none d-lg-block" style="max-width: 250px">Unleash the Thriller and Fictional part of books.</p>
-                <a class="nav-link animate-underline stretched-link text-dark-emphasis py-1 px-0" href="home-furniture.html">
-                  <span class="animate-target">View</span>
-                  <i class="ci-chevron-right fs-base mt-1 ms-1"></i>
-                </a>
-              </div>
-              <div class="hover-effect-target d-flex align-items-end h-100 overflow-hidden rounded-5">
-                <div class="position-relative z-1 rtl-flip">
-                  <img src="assets/img/simple_book.jpg" class="hover-effect-target d-none-dark" width="773" alt="Furniture Store" style="object-fit:cover;">
+          <div class="accordion-collapse collapse d-md-block" id="offers" aria-labelledby="offersHeading">
+            <div class="row g-3 g-lg-4 pt-3 pt-md-0">
+              <div class="col-md-7">
+                <div class="position-relative d-flex flex-column flex-sm-row align-items-center h-100 rounded-5 overflow-hidden px-5 px-sm-0 pe-sm-4">
+                  <span class="position-absolute top-0 start-0 w-100 h-100 d-none-dark rtl-flip" style="background: linear-gradient(90deg, #accbee 0%, #e7f0fd 100%)"></span>
+                  <span class="position-absolute top-0 start-0 w-100 h-100 d-none d-block-dark rtl-flip" style="background: linear-gradient(90deg, #1b273a 0%, #1f2632 100%)"></span>
+                  <div class="position-relative z-1 text-center text-sm-start pt-4 pt-sm-0 ps-xl-4 mt-2 mt-sm-0 order-sm-2">
+                    <h2 class="h3 mb-2">iPhone 14</h2>
+                    <p class="fs-sm text-light-emphasis mb-sm-4">Apple iPhone 14 128GB Blue</p>
+                    <a class="btn btn-primary" href="shop-product-general-electronics.html">
+                      From $899
+                      <i class="ci-arrow-up-right fs-base ms-1 me-n1"></i>
+                    </a>
+                  </div>
+                  <div class="position-relative z-1 w-100 align-self-end order-sm-1" style="max-width: 416px">
+                    <div class="ratio rtl-flip" style="--cz-aspect-ratio: calc(320 / 416 * 100%)">
+                      <img src="assets/img/shop/electronics/banners/iphone-1.png" alt="iPhone 14">
+                    </div>
+                  </div>
                 </div>
-                <span class="bg-body-secondary position-absolute top-0 start-0 w-100 h-100 d-none-dark"></span>
-                <span class="bg-dark position-absolute top-0 start-0 w-100 h-100 d-none d-block-dark"></span>
               </div>
-            </div>
-
-            <!-- Grocery store -->
-            <div class="hover-effect-scale ratio" id="grocery" style="--cz-transform-scale: 1.03; --cz-transition-duration: .3s">
-              <div class="nav flex-column position-absolute top-0 start-0 w-100 h-100 z-2 pt-4 pt-xl-5 px-4 ps-xl-5 mt-lg-2 ms-lg-2 m-xl-0">
-                <h2 class="h3 text-white d-none d-lg-block pb-2 mb-1">Non-Fictional</h2>
-                <h2 class="h4 text-white d-lg-none mb-2">Non-Fictional</h2>
-                <p class="text-white opacity-75 fs-xs mb-2 mb-xl-3 d-none d-sm-block d-md-none d-lg-block" style="max-width: 250px">Dive into the world of Reality.</p>
-                <a class="nav-link animate-underline stretched-link text-white py-1 px-0" href="home-grocery.html">
-                  <span class="animate-target">View</span>
-                  <i class="ci-chevron-right fs-base mt-1 ms-1"></i>
-                </a>
-              </div>
-              <div class="hover-effect-target d-flex align-items-end justify-content-end h-100 overflow-hidden rounded-5">
-                <div class="position-relative z-1 rtl-flip">
-                  <img src="assets/img/non-fictional2.webp" class="hover-effect-target d-none-dark" width="627" alt="Grocery Store">
+              <div class="col-md-5">
+                <div class="position-relative d-flex flex-column align-items-center justify-content-between h-100 rounded-5 overflow-hidden pt-3">
+                  <span class="position-absolute top-0 start-0 w-100 h-100 d-none-dark rtl-flip" style="background: linear-gradient(90deg, #fdcbf1 0%, #fdcbf1 1%, #ffecfa 100%)"></span>
+                  <span class="position-absolute top-0 start-0 w-100 h-100 d-none d-block-dark rtl-flip" style="background: linear-gradient(90deg, #362131 0%, #322730 100%)"></span>
+                  <div class="position-relative z-1 text-center pt-3 mx-4">
+                    <i class="ci-apple text-body-emphasis fs-3 mb-3"></i>
+                    <p class="fs-sm text-light-emphasis mb-1">Deal of the week</p>
+                    <h2 class="h3 mb-4">iPad Pro M1</h2>
+                  </div>
+                  <a class="position-relative z-1 d-block w-100" href="shop-product-general-electronics.html">
+                    <div class="ratio" style="--cz-aspect-ratio: calc(159 / 525 * 100%)">
+                      <img src="assets/img/shop/electronics/banners/ipad.png" width="525" alt="iPad">
+                    </div>
+                  </a>
                 </div>
-                <span class="position-absolute top-0 start-0 w-100 h-100 d-none-dark" style="background-color: #708b88;"></span>
-                <span class="position-absolute top-0 start-0 w-100 h-100 d-none d-block-dark" style="background-color: #49595a;"></span>
-              </div>
-            </div>
-          </div>
-          <div class="d-flex flex-column flex-md-row gap-4">
-
-            <!-- Fashion store v.1 -->
-            <div class="hover-effect-scale ratio" id="fashion-1" style="--cz-transform-scale: 1.03; --cz-transition-duration: .3s">
-              <div class="nav flex-column position-absolute top-0 start-0 w-100 h-100 z-2 pt-4 pt-xl-5 px-4 ps-xl-5 mt-lg-2 ms-lg-2 m-xl-0">
-                <h2 class="h3 text-white d-none d-lg-block pb-2 mb-1">Fashion Store v.1</h2>
-                <h2 class="h4 text-white d-lg-none mb-2">Fashion Store v.1</h2>
-                <p class="text-white opacity-75 fs-xs mb-2 mb-xl-3 d-none d-sm-block d-md-none d-lg-block" style="max-width: 250px">Discover the newest trends in fashion with our exclusive designer wear.</p>
-                <a class="nav-link animate-underline stretched-link text-white py-1 px-0" href="home-fashion-v1.html">
-                  <span class="animate-target">View demo</span>
-                  <i class="ci-chevron-right fs-base mt-1 ms-1"></i>
-                </a>
-              </div>
-              <div class="hover-effect-target d-flex align-items-end justify-content-end h-100 overflow-hidden rounded-5">
-                <div class="position-relative z-1 rtl-flip">
-                  <img src="assets/img/intro/demos/fashion-1-light.png" class="hover-effect-target d-none-dark" width="370" alt="Fashion Store v.1">
-                  <img src="assets/img/intro/demos/fashion-1-dark.png" class="hover-effect-target d-none d-block-dark" width="370" alt="Fashion Store v.1">
-                </div>
-                <span class="position-absolute top-0 start-0 w-100 h-100" style="background-color: #333d4c;"></span>
-              </div>
-            </div>
-
-            <!-- Electronics store -->
-            <div class="hover-effect-scale ratio" id="electronics" style="--cz-transform-scale: 1.03; --cz-transition-duration: .3s">
-              <div class="nav flex-column position-absolute top-0 start-0 w-100 h-100 z-2 pt-4 pt-xl-5 px-4 ps-xl-5 mt-lg-2 ms-lg-2 m-xl-0">
-                <h2 class="h3 d-none d-lg-block pb-2 mb-1">Comics</h2>
-                <h2 class="h4 d-lg-none mb-2">Comics</h2>
-                <p class="fs-xs mb-2 mb-xl-3 d-none d-sm-block d-md-none d-lg-block" style="max-width: 250px">Get a Comic and Groom.</p>
-                <a class="nav-link animate-underline stretched-link text-dark-emphasis py-1 px-0" href="home-electronics.html">
-                  <span class="animate-target">View</span>
-                  <i class="ci-chevron-right fs-base mt-1 ms-1"></i>
-                </a>
-              </div>
-              <div class="hover-effect-target d-flex align-items-end justify-content-end h-100 overflow-hidden rounded-5">
-                <div class="position-relative z-1 rtl-flip">
-                  <img src="assets/img/comic-book.jpg" class="hover-effect-target d-none-dark" width="540" alt="Electronics Store">
-                </div>
-                <span class="position-absolute top-0 start-0 w-100 h-100 d-none-dark" style="background-color: #ccdff5;"></span>
-                <span class="position-absolute top-0 start-0 w-100 h-100 d-none d-block-dark" style="background-color: #212c3d;"></span>
-              </div>
-            </div>
-
-            <!-- Fashion store v.2 -->
-            <div class="hover-effect-scale ratio" id="fashion-2" style="--cz-transform-scale: 1.03; --cz-transition-duration: .3s">
-              <div class="nav flex-column position-absolute top-0 start-0 w-100 h-100 z-2 pt-4 pt-xl-5 px-4 ps-xl-5 mt-lg-2 ms-lg-2 m-xl-0">
-                <h2 class="h3 d-none d-lg-block pb-2 mb-1">Fashion Store v.2</h2>
-                <h2 class="h4 d-lg-none mb-2">Fashion Store v.2</h2>
-                <p class="fs-xs mb-2 mb-xl-3 d-none d-sm-block d-md-none d-lg-block" style="max-width: 250px">Unleash your style with our versatile and affordable fashion finds.</p>
-                <a class="nav-link animate-underline stretched-link text-dark-emphasis py-1 px-0" href="home-fashion-v2.html">
-                  <span class="animate-target">View demo</span>
-                  <i class="ci-chevron-right fs-base mt-1 ms-1"></i>
-                </a>
-              </div>
-              <div class="hover-effect-target d-flex align-items-end justify-content-end h-100 overflow-hidden rounded-5">
-                <div class="position-relative z-1 rtl-flip">
-                  <img src="assets/img/intro/demos/fashion-2-light.png" class="hover-effect-target d-none-dark" width="466" alt="Fashion Store v.2">
-                  <img src="assets/img/intro/demos/fashion-2-dark.png" class="hover-effect-target d-none d-block-dark" width="466" alt="Fashion Store v.2">
-                </div>
-                <span class="position-absolute top-0 start-0 w-100 h-100 d-none-dark" style="background-color: #f3eef3;"></span>
-                <span class="position-absolute top-0 start-0 w-100 h-100 d-none d-block-dark" style="background-color: #35313a;"></span>
               </div>
             </div>
           </div>
@@ -363,37 +227,150 @@
       </section>
 
 
-      <!-- new releases -->
-      <div class="container mt-5">
-        <h2 class="container-title">New Releases</h2>
-        <div class="scroll-button-container">
-            <button class="scroll-button left btn btn-primary mr-3" onclick="scrollLeft()">‹</button>
-            <div class="scroll-container">
-              <?php
-                include '../admin/include/connection.php';
-                $sql = "SELECT * FROM tbl_book INNER JOIN tbl_category ON tbl_book.category_id=tbl_category.category_id INNER JOIN tbl_book_image ON tbl_book.isbn=tbl_book_image.isbn WHERE type='front'";
-                $result = mysqli_query($conn,$sql);
-                while($row = mysqli_fetch_assoc($result)){
-              ?>
-                <div class="card book-card" style="width: 19rem;">
-                    <img src="../admin/uploads/books/<?php echo $row["isbn"];?>/<?php echo $row["stat_file"]; ?>" class="card-img-top book-img" alt="Book 1" style="width: 100%; height: 300px;">
-                    <div class="card-body">
-                        <h5 class="book-title"><?php echo $row['name'] ?></h5>
-                        <p class="book-author"><?php echo $row['author'] ?></p>
-                        <p class="book-price"><?php echo $row['amount'] ?></p>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
-                    </div>
-                </div>
+      
 
-                <?php
+
+      <!-- Products grid -->
+      <section class="container pb-5 mb-sm-2 mb-md-3 mb-lg-4 mb-xl-5">
+        <div class="row">
+
+            <?php
+                $category = $_GET['category'];
+                
+                if($category == 'fiction'){
+                  include 'home-fiction-category.php';
                 }
-                ?>
-              </div>
-              <button class="scroll-button right btn btn-primary ml-3" onclick="scrollRight()">›</button>
-        </div>
-    </div>   
-    </main>
+                else if($category == 'non-fiction'){
+                  include 'home-non-fiction-category.php';
+                }
+            ?>
 
+            <!-- Banner -->
+            <!-- <div class="position-relative rounded-5 overflow-hidden mb-4">
+              <span class="position-absolute top-0 start-0 w-100 h-100 d-none-dark rtl-flip" style="background: linear-gradient(-90deg, #accbee 0%, #e7f0fd 100%)"></span>
+              <span class="position-absolute top-0 start-0 w-100 h-100 d-none d-block-dark rtl-flip" style="background: linear-gradient(-90deg, #1b273a 0%, #1f2632 100%)"></span>
+              <div class="row align-items-center position-relative z-1">
+                <div class="col-md-6 pt-5 pt-md-0 mb-2 mb-md-0">
+                  <div class="text-center text-md-start py-md-5 px-4 ps-md-5 pe-md-0 me-md-n5">
+                    <h3 class="text-uppercase fw-bold ps-xxl-3 pb-2 mb-1">Seasonal weekly sale 2024</h3>
+                    <p class="text-body-emphasis ps-xxl-3 mb-0">Use code <span class="d-inline-block fw-semibold text-dark bg-white rounded-pill py-1 px-2">Sale 2024</span> to get best offer</p>
+                  </div>
+                </div>
+                <div class="col-md-6 d-flex justify-content-center justify-content-md-end">
+                  <div class="me-3 me-lg-4 me-xxl-5">
+                    <img src="assets/img/shop/electronics/banners/iphone-2.png" class="d-block rtl-flip" width="335" alt="Camera">
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+            
+
+              
+
+            <!-- Pagination -->
+            <nav class="border-top mt-4 pt-3" aria-label="Catalog pagination">
+              <ul class="pagination pagination-lg pt-2 pt-md-3">
+                <li class="page-item disabled me-auto">
+                  <a class="page-link d-flex align-items-center h-100 fs-lg px-2" href="#!" aria-label="Previous page">
+                    <i class="ci-chevron-left mx-1"></i>
+                  </a>
+                </li>
+                <li class="page-item active" aria-current="page">
+                  <span class="page-link">
+                    1
+                    <span class="visually-hidden">(current)</span>
+                  </span>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#!">2</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#!">3</a>
+                </li>
+                <li class="page-item">
+                  <span class="page-link pe-none">...</span>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#!">16</a>
+                </li>
+                <li class="page-item ms-auto">
+                  <a class="page-link d-flex align-items-center h-100 fs-lg px-2" href="#!" aria-label="Next page">
+                    <i class="ci-chevron-right mx-1"></i>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+
+      </section>
+
+
+      <!-- Subscription form + Vlog -->
+      <section class="bg-body-tertiary py-5">
+        <div class="container pt-sm-2 pt-md-3 pt-lg-4 pt-xl-5">
+          <div class="row">
+            <div class="col-md-6 col-lg-5 mb-5 mb-md-0">
+              <h2 class="h4 mb-2">Sign up to our newsletter</h2>
+              <p class="text-body pb-2 pb-ms-3">Receive our latest updates about our products &amp; promotions</p>
+              <form class="d-flex needs-validation pb-1 pb-sm-2 pb-md-3 pb-lg-0 mb-4 mb-lg-5" novalidate="">
+                <div class="position-relative w-100 me-2">
+                  <input type="email" class="form-control form-control-lg" placeholder="Your email" required="">
+                </div>
+                <button type="submit" class="btn btn-lg btn-primary">Subscribe</button>
+              </form>
+              <div class="d-flex gap-3">
+                <a class="btn btn-icon btn-secondary rounded-circle" href="#!" aria-label="Instagram">
+                  <i class="ci-instagram fs-base"></i>
+                </a>
+                <a class="btn btn-icon btn-secondary rounded-circle" href="#!" aria-label="Facebook">
+                  <i class="ci-facebook fs-base"></i>
+                </a>
+                <a class="btn btn-icon btn-secondary rounded-circle" href="#!" aria-label="YouTube">
+                  <i class="ci-youtube fs-base"></i>
+                </a>
+                <a class="btn btn-icon btn-secondary rounded-circle" href="#!" aria-label="Telegram">
+                  <i class="ci-telegram fs-base"></i>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-5 col-xl-4 offset-lg-1 offset-xl-2">
+              <ul class="list-unstyled d-flex flex-column gap-4 ps-md-4 ps-lg-0 mb-3">
+                <li class="nav flex-nowrap align-items-center position-relative">
+                  <img src="assets/img/home/electronics/vlog/01.jpg" class="rounded" width="140" alt="Video cover">
+                  <div class="ps-3">
+                    <div class="fs-xs text-body-secondary lh-sm mb-2">6:16</div>
+                    <a class="nav-link fs-sm hover-effect-underline stretched-link p-0" href="#!">5 New Cool Gadgets You Must See on Cartzilla - Cheap Budget</a>
+                  </div>
+                </li>
+                <li class="nav flex-nowrap align-items-center position-relative">
+                  <img src="assets/img/home/electronics/vlog/02.jpg" class="rounded" width="140" alt="Video cover">
+                  <div class="ps-3">
+                    <div class="fs-xs text-body-secondary lh-sm mb-2">10:20</div>
+                    <a class="nav-link fs-sm hover-effect-underline stretched-link p-0" href="#!">5 Super Useful Gadgets on Cartzilla You Must Have in 2023</a>
+                  </div>
+                </li>
+                <li class="nav flex-nowrap align-items-center position-relative">
+                  <img src="assets/img/home/electronics/vlog/03.jpg" class="rounded" width="140" alt="Video cover">
+                  <div class="ps-3">
+                    <div class="fs-xs text-body-secondary lh-sm mb-2">8:40</div>
+                    <a class="nav-link fs-sm hover-effect-underline stretched-link p-0" href="#!">Top 5 New Amazing Gadgets on Cartzilla You Must See</a>
+                  </div>
+                </li>
+              </ul>
+              <div class="nav ps-md-4 ps-lg-0">
+                <a class="btn nav-link animate-underline text-decoration-none px-0" href="#!">
+                  <span class="animate-target">View all</span>
+                  <i class="ci-chevron-right fs-base ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
 
     <!-- Page footer -->
@@ -671,7 +648,6 @@
 
     <!-- Bootstrap + Theme scripts -->
     <script src="assets/js/theme.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   
 
 </body>

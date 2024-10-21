@@ -110,7 +110,7 @@ $cnt=1;
                       </div>
                     <div class="card-body d-flex gap-3 flex-column flex-sm-row align-items-center">
                       <img src="../../admin/uploads/books/<?php echo $row["isbn"];?>/<?php echo $row["stat_file"]; ?>" height="250px">
-                      <table class="table table-borderless fs-10 fw-medium mb-0 mx-4">
+                      <table class="table table-borderless fs-10 fw-medium mb-0 mx-5">
                         <tbody>
                           <tr>
                             <td class="p-1" style="width: 15%;">ISBN Number :</td>
