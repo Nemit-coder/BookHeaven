@@ -96,9 +96,9 @@ $cnt=1;
             </div>
           </div>
           <div class="row g-1 mb-3">
-            <div class="col-xxl-6">
+            <div class="col-lg-6 col-xl-12 col-xxl-12 col-sm-12 col-md-6">
               <div class="row g-3">
-                <div class="col-7">
+                <div class="col-xl-12 col-lg-6 col-md-6 col-xxl-12">
                   <div class="card font-sans-serif h-100">
                     <div class="card-header bg-body-tertiary d-flex flex-between-center py-2">
                         <h6 class="mb-0">Course Details</h6>
@@ -147,14 +147,15 @@ $cnt=1;
                     </div>
                   </div>
                 </div>
-               
+              </div>
+              </div> 
               
             
           
-            <div class="col-lg-5 col-xxl-12">
+              <div class="col-lg-12 col-xl-12 col-xxl-12 col-sm-12 col-md-12">
               <div class="card h-100">
                 <div class="card-header bg-body-tertiary d-flex flex-between-center py-2">
-                  <h6 class="mb-0">Course Details</h6>
+                  <h6 class="mb-0">asdsd Details</h6>
                   <div class="dropdown font-sans-serif position-static d-inline-block btn-reveal-trigger"><button class="btn btn-link text-600 btn-sm dropdown-toggle btn-reveal dropdown-caret-none" type="button" id="dropdown-payment-methods" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs-10"></span></button>
                     <div class="dropdown-menu dropdown-menu-end border py-2" aria-labelledby="dropdown-payment-methods"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Edit</a>
                       <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Delete</a>

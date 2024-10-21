@@ -594,12 +594,12 @@
             <div class="scroll-container">
               <?php
                 include '../admin/include/connection.php';
-                $sql = "SELECT * FROM tbl_book INNER JOIN tbl_category ON tbl_book.category_id=tbl_category.category_id INNER JOIN tbl_book_image ON tbl_book.isbn=tbl_book_image.isbn";
+                $sql = "SELECT * FROM tbl_book INNER JOIN tbl_category ON tbl_book.category_id=tbl_category.category_id INNER JOIN tbl_book_image ON tbl_book.isbn=tbl_book_image.isbn WHERE type='front'";
                 $result = mysqli_query($conn,$sql);
                 while($row = mysqli_fetch_assoc($result)){
               ?>
                 <div class="card book-card" style="width: 19rem;">
-                    <img src="../admin/uploads/<?php echo $row["category_id"];?>/<?php echo $row["stat_file"]; ?>" class="card-img-top book-img" alt="Book 1" style="width: 100%; height: 300px;">
+                    <img src="../admin/uploads/books/<?php echo $row["isbn"];?>/<?php echo $row["stat_file"]; ?>" class="card-img-top book-img" alt="Book 1" style="width: 100%; height: 300px;">
                     <div class="card-body">
                         <h5 class="book-title"><?php echo $row['name'] ?></h5>
                         <p class="book-author"><?php echo $row['author'] ?></p>

@@ -55,13 +55,13 @@ else if(isset($_POST['insert_book'])) {
 else if(isset($_POST['insert_book_image'])) {
 
     $isbn = $_POST['isbn'];
-    $category = $_POST['category_id'];
+    $type = $_POST['type'];
 
     // Handle the file upload
     $stat_file = $_FILES['stat_file']['name'];
 
     // Create target directory based on 'enroll' if it doesn't exist
-    $target_dir = "../uploads/" . $category . "/";
+    $target_dir = "../uploads/books/" . $isbn . "/";
     if (!file_exists($target_dir)) {
         mkdir($target_dir, 0777, true);
     }
@@ -79,7 +79,7 @@ else if(isset($_POST['insert_book_image'])) {
         // Upload file
         if(move_uploaded_file($_FILES['stat_file']['tmp_name'],$target_file)){
             // Insert record
-            $query = "INSERT INTO tbl_book_image (isbn,category_id, stat_file) values('$isbn','".$category."','".$stat_file."')";
+            $query = "INSERT INTO tbl_book_image (type,isbn,stat_file) values('$type','".$isbn."','".$stat_file."')";
             mysqli_query($conn,$query);
 			echo "<script> alert('Image Added successfully') </script>";
 			echo "<script>window.open('../view/view.php?VxjMWVHUlhiSGxsVVQwOQ=$book','_self')</script>";

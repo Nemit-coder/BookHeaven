@@ -22,13 +22,24 @@
                 <div class="card-body pt-0">
                  
                   <div class="row gx-2">
-                      <div class="col-6 mb-2">
+                      <div class="col-4 mb-2">
                         <label class="form-label" for="product-name">Select File:</label>
                         <input class="form-control" id="product-name" type="file" name="stat_file"/>
-                    </div>
+                      </div>
+
+                      <div class="col-4 mb-2">
+                        <label class="form-label" for="product-name">Select Type:</label>
+                        <select name="type" class="form-select" required>
+                          <option selected disabled>Type</option>
+                          <option value="front">Front</option>
+                          <option value="back">Back</option>
+                          <option value="left">Left</option>
+                          <option value="right">Right</option>
+                        </select>
+                      </div>
                      
-                      <div class="col-6 mb-2">
-                        <label class="form-label" for="manufacturar-name">Category Name:</label>
+                      <div class="col-4 mb-2">
+                        <label class="form-label" for="manufacturar-name">Book Name:</label>
                         <!-- <select class="form-select" id="import-status" name="category">
                         <option value="imported" selected disabled>Select Category</option> -->
                         <?php
@@ -41,7 +52,6 @@
                                           <input type="text" class="form-control"value="<?php echo htmlspecialchars($records['name']); ?>" readonly>
 
                                           <!-- Hidden input for the isbn and category id-->
-                                          <input type="hidden" name="category_id" value="<?php echo htmlspecialchars($records['category_id']); ?>">
                                           <input type="hidden" name="isbn" value="<?php echo htmlspecialchars($records['isbn']); ?>">
 
 
