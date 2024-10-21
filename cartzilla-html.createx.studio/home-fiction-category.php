@@ -488,16 +488,17 @@
         </div>
     </div> -->
 
+
     
     <div class="container pb-5 mb-2 mb-sm-3 mb-lg-4 mb-xl-5 mt-3">
     <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 gy-5" id="productGrid">
-    <div class="animate-underline mb-sm-2">
-              <?php
+            <?php
                 // include '../admin/include/connection.php';
                 $sql = "SELECT * FROM tbl_book INNER JOIN tbl_category ON tbl_book.category_id=tbl_category.category_id INNER JOIN tbl_book_image ON tbl_book.isbn=tbl_book_image.isbn WHERE type='front'";
                 $result = mysqli_query($conn,$sql);
                 while($row = mysqli_fetch_assoc($result)){
               ?>   
+    <div class="animate-underline mb-sm-2">
               <a class="ratio ratio-1x1 d-block mb-3" href="shop-product-furniture.html">
                 <img src="../admin/uploads/books/<?php echo $row["isbn"];?>/<?php echo $row["stat_file"]; ?>" class="" alt="Product">
               </a>
@@ -516,14 +517,13 @@
                   <i class="ci-heart fs-base animate-target"></i>
                 </button>
               </div>
-              <?php
-                }
-              ?>
             </div>
+          <?php
+                }
+              ?>       
           </div>        
-
     </div> 
-    </div>  
+      
 
 
 

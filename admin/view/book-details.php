@@ -9,7 +9,7 @@ if(!isset($_SESSION["username"])){
 <html data-bs-theme="light" lang="en-US" dir="ltr">
 <?php 
   $isbn = base64_decode(base64_decode(base64_decode(base64_decode(base64_decode($_GET['isbn'])))));
-  $sql = "SELECT * FROM tbl_book INNER JOIN tbl_category ON tbl_book.category_id=tbl_category.category_id WHERE isbn='$isbn'";
+  $sql = "SELECT * FROM tbl_book INNER JOIN tbl_category ON tbl_book.category_id=tbl_category.category_id INNER JOIN tbl_book_image ON tbl_book.isbn=tbl_book_image.isbn WHERE tbl_book.isbn='$isbn' AND tbl_book_image.type='front'";
   $result = mysqli_query($conn,$sql);
   $row = mysqli_fetch_array($result);
 $cnt=1;
@@ -101,7 +101,7 @@ $cnt=1;
                 <div class="col-xl-12 col-lg-6 col-md-6 col-xxl-12">
                   <div class="card font-sans-serif h-100">
                     <div class="card-header bg-body-tertiary d-flex flex-between-center py-2">
-                        <h6 class="mb-0">Course Details</h6>
+                        <h6 class="mb-0">Book Information</h6>
                         <div class="dropdown font-sans-serif position-static d-inline-block btn-reveal-trigger"><button class="btn btn-link text-600 btn-sm dropdown-toggle btn-reveal dropdown-caret-none" type="button" id="dropdown-payment-methods" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs-10"></span></button>
                           <div class="dropdown-menu dropdown-menu-end border py-2" aria-labelledby="dropdown-payment-methods"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Edit</a>
                             <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Delete</a>
@@ -109,7 +109,8 @@ $cnt=1;
                         </div>
                       </div>
                     <div class="card-body d-flex gap-3 flex-column flex-sm-row align-items-center">
-                      <table class="table table-borderless fs-10 fw-medium mb-0">
+                      <img src="../../admin/uploads/books/<?php echo $row["isbn"];?>/<?php echo $row["stat_file"]; ?>" height="250px">
+                      <table class="table table-borderless fs-10 fw-medium mb-0 mx-4">
                         <tbody>
                           <tr>
                             <td class="p-1" style="width: 15%;">ISBN Number :</td>
