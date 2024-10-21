@@ -459,7 +459,7 @@
 
 
       <!-- new releases -->
-      <div class="container mt-5">
+      <!-- <div class="container mt-5">
         <h2 class="container-title">New Releases</h2>
         <div class="scroll-button-container">
             <button class="scroll-button left btn btn-primary mr-3" onclick="scrollLeft()">‹</button>
@@ -486,7 +486,44 @@
               </div>
               <button class="scroll-button right btn btn-primary ml-3" onclick="scrollRight()">›</button>
         </div>
-    </div>
+    </div> -->
+
+    
+    <div class="container pb-5 mb-2 mb-sm-3 mb-lg-4 mb-xl-5 mt-3">
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 gy-5" id="productGrid">
+    <div class="animate-underline mb-sm-2">
+              <?php
+                // include '../admin/include/connection.php';
+                $sql = "SELECT * FROM tbl_book INNER JOIN tbl_category ON tbl_book.category_id=tbl_category.category_id INNER JOIN tbl_book_image ON tbl_book.isbn=tbl_book_image.isbn";
+                $result = mysqli_query($conn,$sql);
+                while($row = mysqli_fetch_assoc($result)){
+              ?>   
+              <a class="ratio ratio-1x1 d-block mb-3" href="shop-product-furniture.html">
+                <img src="../admin/uploads/<?php echo $row["category_id"];?>/<?php echo $row["stat_file"]; ?>" class="" alt="Product">
+              </a>
+              <h3 class="mb-2">
+                <a class="d-block fs-sm fw-medium text-truncate mb-1" href="shop-product-furniture.html">
+                  <span class="animate-target"><?php echo $row['name'] ?></span>
+                </a>
+                <a class="d-block fs-sm fw-medium text-truncate" href="shop-product-furniture.html">
+                  <span class="animate-target"><?php echo $row['author'] ?></span>
+                </a>
+              </h3>
+              <div class="h6"><?php echo $row['amount'] ?></div>
+              <div class="d-flex gap-2">
+                <button type="button" class="btn btn-dark w-100 rounded-pill px-3">Add to cart</button>
+                <button type="button" class="btn btn-icon btn-secondary rounded-circle animate-pulse" aria-label="Add to wishlist">
+                  <i class="ci-heart fs-base animate-target"></i>
+                </button>
+              </div>
+              <?php
+                }
+              ?>
+            </div>
+          </div>        
+
+    </div> 
+    </div>  
 
 
 
