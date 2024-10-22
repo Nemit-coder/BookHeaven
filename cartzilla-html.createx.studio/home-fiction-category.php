@@ -41,7 +41,7 @@
                         </li>
                       </ul>
                     </div>
-                    <a class="d-block rounded-top overflow-hidden p-3 p-sm-4" href="shop-product-general-electronics.html">
+                    <a class="d-block rounded-top overflow-hidden p-3 p-sm-4" href="book-general-info.php?isbn=<?php echo $row['isbn'] ?>">
                       <div class="ratio" style="--cz-aspect-ratio: calc(320 / 258 * 100%)">
                         <img src="../admin/uploads/books/<?php echo $row["isbn"];?>/<?php echo $row["stat_file"]; ?>" alt="VR Glasses">
                       </div>
@@ -59,12 +59,12 @@
                       <span class="text-body-tertiary fs-xs">(123)</span>
                     </div>
                     <h3 class="pb-1 mb-2">
-                      <a class="d-block fs-sm fw-medium text-truncate" href="shop-product-general-electronics.html">
+                      <a class="d-block fs-sm fw-medium text-truncate" href="book-general-info.php?isbn=<?php echo $row['isbn'] ?>">
                         <span class="animate-target"><?php echo $row['name'] ?></span>
                       </a>
                     </h3>
                     <h3 class="pb-1 mb-2">
-                      <a class="d-block fs-sm fw-medium text-truncate" href="shop-product-general-electronics.html">
+                      <a class="d-block fs-sm fw-medium text-truncate" href="book-general-info.php?isbn=<?php echo $row['isbn'] ?>">
                         <span class="animate-target"><?php echo $row['author'] ?></span>
                       </a>
                     </h3>
