@@ -5,6 +5,7 @@ session_start();
 
 $category= base64_encode(base64_encode(base64_encode('category')));
 $book= base64_encode(base64_encode(base64_encode('book')));
+$bookdetails= base64_encode(base64_encode(base64_encode('bookdetails')));
 
 
  if(isset($_POST['insert_category']))

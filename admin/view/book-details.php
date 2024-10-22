@@ -9,9 +9,14 @@ if(!isset($_SESSION["username"])){
 <html data-bs-theme="light" lang="en-US" dir="ltr">
 <?php 
   $isbn = base64_decode(base64_decode(base64_decode(base64_decode(base64_decode($_GET['isbn'])))));
-  $sql = "SELECT * FROM tbl_book INNER JOIN tbl_category ON tbl_book.category_id=tbl_category.category_id INNER JOIN tbl_book_image ON tbl_book.isbn=tbl_book_image.isbn WHERE tbl_book.isbn='$isbn' AND tbl_book_image.type='front'";
+  $sql = "SELECT * FROM tbl_book INNER JOIN tbl_category ON tbl_book.category_id=tbl_category.category_id WHERE tbl_book.isbn='$isbn'";
   $result = mysqli_query($conn,$sql);
   $row = mysqli_fetch_array($result);
+  
+  $sql3 = "SELECT * FROM tbl_book INNER JOIN tbl_book_image ON tbl_book.isbn=tbl_book_image.isbn WHERE tbl_book.isbn='$isbn' AND type='front'";
+  $result3 = mysqli_query($conn,$sql3);
+  $row3 = mysqli_fetch_array($result3);
+ 
 $cnt=1;
 // while ($row=mysqli_fetch_array($ret)) {
  
@@ -109,7 +114,7 @@ $cnt=1;
                         </div>
                       </div>
                     <div class="card-body d-flex gap-3 flex-column flex-sm-row align-items-center">
-                      <img src="../../admin/uploads/books/<?php echo $row["isbn"];?>/<?php echo $row["stat_file"]; ?>" height="250px">
+                    <img src="../../admin/uploads/books/<?php echo $row3["isbn"];?>/<?php echo $row3["stat_file"]; ?>" height="250px">
                       <table class="table table-borderless fs-10 fw-medium mb-0 mx-5">
                         <tbody>
                           <tr>
@@ -210,7 +215,18 @@ $cnt=1;
                 </div>
               </div>
             </div>
-            
+
+            <div class="card-body d-flex flex-row gap-5 mt-5 justify-content-center">             
+             <?php
+               $sql2 = "SELECT * FROM tbl_book INNER JOIN tbl_book_image ON tbl_book.isbn=tbl_book_image.isbn WHERE tbl_book.isbn='$isbn'";
+               $result2 = mysqli_query($conn,$sql2);
+                while($row2 = mysqli_fetch_array($result2)){
+             ?>
+               <img src="../../admin/uploads/books/<?php echo $row2["isbn"];?>/<?php echo $row2["stat_file"]; ?>" height="250px">
+               <?php
+                }
+                ?>
+                </div>
               </div>
             </div>        
           </div>

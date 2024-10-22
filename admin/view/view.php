@@ -111,6 +111,10 @@
                    $result = mysqli_query($conn,"SELECT * FROM tbl_book INNER JOIN tbl_category ON tbl_book.category_id=tbl_category.category_id ORDER BY id DESC");
                    include 'book_list.php';
                  }
+
+               //   else if($vid2 == 'bookdetails'){
+               //      include 'book-details.php';
+               //   }
                 
                  
                  else {
