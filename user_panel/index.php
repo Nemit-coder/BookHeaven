@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
 
     <!-- SEO Meta Tags -->
-    <title>Fiction</title>
+    <title>Book Heaven</title>
     <meta name="description" content="Cartzilla - Multipurpose Bootstrap E-Commerce HTML Template">
     <meta name="keywords" content="online shop, e-commerce, online store, market, multipurpose, product landing, cart, checkout, ui kit, light and dark mode, bootstrap, html5, css3, javascript, gallery, slider, mobile, pwa">
     <meta name="author" content="Createx Studio">
@@ -330,7 +330,7 @@
                       </ul>
                     </div>
                     <a class="d-block rounded-top overflow-hidden p-3 p-sm-4" href="book-general-info.php?isbn=<?php echo $row['isbn'] ?>">
-                      <div class="ratio" style="--cz-aspect-ratio: calc(320 / 258 * 100%)">
+                      <div class="ratio" style="--cz-aspect-ratio: calc(330 / 258 * 100%)">
                         <img src="../admin/uploads/books/<?php echo $row["isbn"];?>/<?php echo $row["stat_file"]; ?>" alt="VR Glasses">
                       </div>
                     </a>

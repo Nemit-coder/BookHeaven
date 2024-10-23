@@ -1,3 +1,69 @@
+    <?php
+        include '../admin/include/connection.php';
+        session_start();
+        if(isset($_POST['signup'])){
+          $username = $_POST['username'];
+          $mobile_no = $_POST['mobile_no'];
+          $email = $_POST['email'];
+          $password = $_POST['password'];
+
+          $exist = "SELECT * FROM tbl_user_signup WHERE mobile_no='$mobile_no' OR email='$email'";
+          $result = mysqli_query($conn, $exist);
+          if(mysqli_num_rows($result)>0){
+            echo "<script>alert('User already exist')</script>";
+            echo "<script>window.open('index.php','_self')</script>";
+            exit();
+          }
+          else {
+            $sql = "INSERT INTO tbl_user_signup (username,mobile_no,email,password) VALUES ('$username','$mobile_no','$email','$password')";
+            $result2 = mysqli_query($conn,$sql);
+            if($result2){
+              // session_start();
+              $_SESSION['username'] = $username;
+              header("location: index.php");
+              exit();
+            }
+            else{
+              echo "<script>alert('Some Error')</script>";
+              echo "<script>window.open('index.php','_self')</script>";
+            }
+          }
+        }
+        else if(isset($_POST['signin'])){
+          $emailorpass = $_POST['emailorpass'];
+          $password = $_POST['password'];
+
+          $sql="SELECT * from tbl_user_signup where email or mobile_no = '{$emailorpass}' AND password = '{$password}'";
+          $result=mysqli_query($conn,$sql);
+
+
+          if (mysqli_num_rows($result) > 0) {
+            while($row=mysqli_fetch_assoc($result)){
+              // session_start();
+              $_SESSION['username'] = $username;
+              header("location: index.php");
+            }
+          }
+          else{
+               echo "<script>alert('Invalid Username or Mobile number Or Password')</script>";
+              echo "<script>window.open('index.php','_self')</script>";
+          }
+        }
+        else if(isset($_POST['logout'])){
+          // Initialize the session
+            // session_start();
+            
+            // Unset all of the session variables
+            $_SESSION = array();
+            
+            // Destroy the session.
+            session_destroy();
+            
+            // Redirect to login page
+            header("location: index.php");
+            exit;
+        }
+    ?>
     <!-- Shopping cart offcanvas -->
     <div class="offcanvas offcanvas-end pb-sm-2 px-sm-2" id="shoppingCart" tabindex="-1" aria-labelledby="shoppingCartLabel" style="width: 500px">
 
@@ -10,19 +76,20 @@
       </div> -->
 
       
-
       <main class="content-wrapper w-100 px-3 ps-lg-5 pe-lg-4 mx-auto" style="max-width: 1920px">
         <div class="d-lg-flex">
   
           <!-- Login form + Footer -->
           <div class="d-flex flex-column min-vh-100 w-100 py-0 mx-auto me-lg-5" style="max-width: 416px">
-            <!-- close-btn -->
             <div class="offcanvas-header d-flex position-absolute top-0 end-0 py-0 pt-2">
               <!-- Right: Close Button -->
-              <button type="button" class="btn-close mt-1" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              <button type="button" class="btn-close mt-3" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
 
 
+            <?php
+              if(!isset($_SESSION['username'])){
+            ?>  
             <!-- Nav Tabs -->
             <ul class="nav nav-tabs mt-3" id="offcanvasTabs" role="tablist">
               <li class="nav-item" role="presentation">
@@ -34,27 +101,37 @@
             </ul>   
                   
 
-            <!-- Tab Content -->
-            <div class="tab-content pt-3" id="offcanvasTabContent">
-              <!-- Create Account Tab -->
+        <!-- Tab Content -->
+        <div class="tab-content pt-3" id="offcanvasTabContent">
+          <!---------- Sign Up Tab ---------->
               <div class="tab-pane fade show active" id="create" role="tabpanel" aria-labelledby="create-tab">
-
-                <h1 class="h2 mt-auto">Create an account</h1>
-                <div class="nav fs-sm mb-3 mb-lg-4">
-                  I already have an account
-                  <a class="nav-link text-decoration-underline p-0 ms-2" href="account-signin.php">Sign in</a>
-                </div>
-                <div class="nav fs-sm mb-4 d-lg-none">
-                  <span class="me-2">Uncertain about creating an account?</span>
-                  <a class="nav-link text-decoration-underline p-0" href="#benefits" data-bs-toggle="offcanvas" aria-controls="benefits">Explore the Benefits</a>
-                </div>
+              <h1 class="h2 mt-auto">Create an account</h1>
+              <div class="nav fs-sm mb-3 mb-lg-4">
+                I already have an account
+                <a class="nav-link text-decoration-underline p-0 ms-2" href="account-signin.php">Sign in</a>
+              </div>
+              <div class="nav fs-sm mb-4 d-lg-none">
+                <span class="me-2">Uncertain about creating an account?</span>
+                <a class="nav-link text-decoration-underline p-0" href="#benefits" data-bs-toggle="offcanvas" aria-controls="benefits">Explore the Benefits</a>
+              </div>
   
             <!-- Form -->
             <form class="needs-validation" novalidate="" action="<?php $_SERVER["PHP_SELF"] ?>" method="POST">
               <div class="position-relative mb-4">
+                <label for="register-user" class="form-label">Username</label>
+                <input type="text" class="form-control form-control-lg" id="username" required="" name="username">
+                <div class="invalid-tooltip bg-transparent py-0">Invalid Username</div>
+              </div>
+              <div class="position-relative mb-4">
+                <label for="register-user" class="form-label">Mobile No</label>
+                <input type="text" class="form-control form-control-lg" id="mobile_no" required="" name="mobile_no">
+                <div class="invalid-tooltip bg-transparent py-0">Invalid Mobile Number</div>
+              </div>
+              <div class="position-relative mb-4">
                 <label for="register-email" class="form-label">Email</label>
                 <input type="email" class="form-control form-control-lg" id="register-email" required="" name="email">
                 <div class="invalid-tooltip bg-transparent py-0">Enter a valid email address!</div>
+                <div class="invalid-tooltip bg-transparent py-0"><?php echo isset($error) ? $error : 'Email already exists!' ?></div>
               </div>
               <div class="mb-4">
                 <label for="register-password" class="form-label">Password</label>
@@ -76,8 +153,8 @@
                   <label for="privacy" class="form-check-label">I have read and accept the <a class="text-dark-emphasis" href="#!">Privacy Policy</a></label>
                 </div>
               </div>
-              <button type="submit" class="btn btn-lg btn-primary w-100" name="create_account"> 
-                Create an account
+              <button type="submit" class="btn btn-lg btn-primary w-100" name="signup"> 
+                Sign Up
                 <i class="ci-chevron-right fs-lg ms-1 me-n1"></i>
               </button>
             </form>
@@ -110,14 +187,11 @@
               <div class="nav mb-4">
                 <a class="nav-link text-decoration-underline p-0" href="help-topics-v1.html">Need help?</a>
               </div>
-              
             </footer>
               </div>
 
 
-
-
-
+            <!---------- Sign In Tab ---------->
               <div class="tab-pane fade" id="signin" role="tabpanel" aria-labelledby="signin-tab">  
                 <h1 class="h2 ">Welcome back</h1>
                 <div class="nav fs-sm mb-4">
@@ -128,7 +202,7 @@
                 <!-- Form -->
                 <form class="needs-validation" novalidate="" action="<?php $_SERVER["PHP_SELF"] ?>" method="POST">
                   <div class="position-relative mb-4">
-                    <input type="email" class="form-control form-control-lg" placeholder="Email" required="" name="email">
+                    <input type="text" class="form-control form-control-lg" placeholder="Email or Mobile Number" required="" name="emailorpass">
                     <div class="invalid-tooltip bg-transparent py-0">Enter a valid email address!</div>
                   </div>
                   <div class="mb-4">
@@ -184,17 +258,37 @@
                   </div>
                 </footer>
               </div>
+              <?php
+                 }
+                 else {
+               ?>
+
+                  <div class="offcanvas-header flex-column align-items-start py-3 pt-lg-4">
+                    <div class="d-flex align-items-center justify-content-between w-100 mb-3 mb-lg-4">
+                      <h4 class="offcanvas-title" id="shoppingCartLabel">Shopping cart</h4>
+                    </div>
+                  </div>
+            
+
+                  <!-- Footer -->
+                  <div class="offcanvas-header flex-column align-items-start">
+                    <div class="d-flex w-100 gap-3">
+                      <a class="btn btn-lg btn-secondary w-100" href="checkout-v1-cart.html">View Profile</a>
+                      <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+                        <button class="btn btn-lg btn-primary w-100" name="logout">Logout</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+
+
+                  
+                 
+              <?php
+                 }
+              ?>
             </div>
           </div>
-
-
-
-
-          
-          
-  
-  
-          
         </div>
       </main>
     </div>
@@ -215,7 +309,7 @@
             <!-- Navbar brand (Logo) -->
             <a href="index.php" class="navbar-brand me-0 mt-0">
               <span class="d-none d-sm-flex flex-shrink-0 text-primary me-2">
-                <img src="assets/img/book-heaven-logo.jpeg" height="auto" width="120px">
+                <img src="assets/img/book-heaven-logo.jpeg" width="110px">
               </span>
             </a>
           </div>
