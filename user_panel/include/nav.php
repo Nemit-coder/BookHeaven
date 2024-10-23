@@ -1,152 +1,202 @@
-<!DOCTYPE html><html lang="en" data-bs-theme="light" data-pwa="true">
-<head>
-    <meta charset="utf-8">
-
-    <!-- Viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
-
-    <!-- SEO Meta Tags -->
-    <title>Fiction</title>
-    <meta name="description" content="Cartzilla - Multipurpose Bootstrap E-Commerce HTML Template">
-    <meta name="keywords" content="online shop, e-commerce, online store, market, multipurpose, product landing, cart, checkout, ui kit, light and dark mode, bootstrap, html5, css3, javascript, gallery, slider, mobile, pwa">
-    <meta name="author" content="Createx Studio">
-
-    <!-- Webmanifest + Favicon / App icons -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="manifest" href="manifest.json">
-    <link rel="icon" type="image/png" href="assets/app-icons/icon-32x32.png" sizes="32x32">
-    <link rel="apple-touch-icon" href="assets/app-icons/icon-180x180.png">
-
-    <!-- Theme switcher (color modes) -->
-    <script src="assets/js/theme-switcher.js"></script>
-
-    <!-- Preloaded local web font (Inter) -->
-    <link rel="preload" href="assets/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin="">
-
-    <!-- Font icons -->
-    <link rel="preload" href="assets/icons/cartzilla-icons.woff2" as="font" type="font/woff2" crossorigin="">
-    <link rel="stylesheet" href="assets/icons/cartzilla-icons.min.css">
-
-    <!-- Vendor styles -->
-    <link rel="stylesheet" href="assets/vendor/choices.js/choices.min.css">
-    <link rel="stylesheet" href="assets/vendor/nouislider/nouislider.min.css">
-
-    <!-- Bootstrap + Theme styles -->
-    <link rel="preload" href="assets/css/theme.min.css" as="style">
-    <link rel="preload" href="assets/css/theme.rtl.min.css" as="style">
-    <link rel="stylesheet" href="assets/css/theme.min.css" id="theme-styles">
-
-    <!-- Customizer -->
-    <script src="assets/js/customizer.min.js"></script>
-  </head>
-  <body>
     <!-- Shopping cart offcanvas -->
     <div class="offcanvas offcanvas-end pb-sm-2 px-sm-2" id="shoppingCart" tabindex="-1" aria-labelledby="shoppingCartLabel" style="width: 500px">
 
       <!-- Header -->
-      <div class="offcanvas-header flex-column align-items-start py-3 pt-lg-4">
+      <!-- <div class="offcanvas-header d-flex justify-content-between align-items-start w-100 py-0 pt-5 w-25">
         <div class="d-flex align-items-center justify-content-between w-100 mb-3 mb-lg-4">
-          <h4 class="offcanvas-title" id="shoppingCartLabel">Welcome</h4>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+           <h4 class="offcanvas-title" id="shoppingCartLabel">Welcome</h4>
+          <button type="button" class="btn-close ml-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <p class="fs-sm">Buy <span class="text-dark-emphasis fw-semibold">$183</span> more to get <span class="text-dark-emphasis fw-semibold">Free Shipping</span></p>
-        <div class="progress w-100" role="progressbar" aria-label="Free shipping progress" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="height: 4px">
-          <div class="progress-bar bg-warning rounded-pill" style="width: 75%"></div>
-        </div>
-      </div>
+      </div> -->
 
-      <!-- Items -->
-      <div class="offcanvas-body d-flex flex-column gap-4 pt-2">
+      
 
-        <!-- Item -->
-        <div class="d-flex align-items-center">
-          <a class="flex-shrink-0" href="shop-product-general-electronics.html">
-            <img src="assets/img/shop/electronics/thumbs/08.png" width="110" alt="iPhone 14">
-          </a>
-          <div class="w-100 min-w-0 ps-2 ps-sm-3">
-            <h5 class="d-flex animate-underline mb-2">
-              <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-general-electronics.html">Apple iPhone 14 128GB White</a>
-            </h5>
-            <div class="h6 pb-1 mb-2">$899.00</div>
-            <div class="d-flex align-items-center justify-content-between">
-              <div class="count-input rounded-2">
-                <button type="button" class="btn btn-icon btn-sm" data-decrement="" aria-label="Decrement quantity">
-                  <i class="ci-minus"></i>
-                </button>
-                <input type="number" class="form-control form-control-sm" value="1" readonly="">
-                <button type="button" class="btn btn-icon btn-sm" data-increment="" aria-label="Increment quantity">
-                  <i class="ci-plus"></i>
-                </button>
+      <main class="content-wrapper w-100 px-3 ps-lg-5 pe-lg-4 mx-auto" style="max-width: 1920px">
+        <div class="d-lg-flex">
+  
+          <!-- Login form + Footer -->
+          <div class="d-flex flex-column min-vh-100 w-100 py-0 mx-auto me-lg-5" style="max-width: 416px">
+            <!-- close-btn -->
+            <div class="offcanvas-header d-flex position-absolute top-0 end-0 py-0 pt-2">
+              <!-- Right: Close Button -->
+              <button type="button" class="btn-close mt-1" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+
+            <!-- Nav Tabs -->
+            <ul class="nav nav-tabs mt-3" id="offcanvasTabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="create-tab" data-bs-toggle="tab" data-bs-target="#create" type="button" role="tab" aria-controls="create" aria-selected="true">Sign Up</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="signin-tab" data-bs-toggle="tab" data-bs-target="#signin" type="button" role="tab" aria-controls="signin" aria-selected="false">Sign In</button>
+              </li>
+            </ul>   
+                  
+
+            <!-- Tab Content -->
+            <div class="tab-content pt-3" id="offcanvasTabContent">
+              <!-- Create Account Tab -->
+              <div class="tab-pane fade show active" id="create" role="tabpanel" aria-labelledby="create-tab">
+
+                <h1 class="h2 mt-auto">Create an account</h1>
+                <div class="nav fs-sm mb-3 mb-lg-4">
+                  I already have an account
+                  <a class="nav-link text-decoration-underline p-0 ms-2" href="account-signin.php">Sign in</a>
+                </div>
+                <div class="nav fs-sm mb-4 d-lg-none">
+                  <span class="me-2">Uncertain about creating an account?</span>
+                  <a class="nav-link text-decoration-underline p-0" href="#benefits" data-bs-toggle="offcanvas" aria-controls="benefits">Explore the Benefits</a>
+                </div>
+  
+            <!-- Form -->
+            <form class="needs-validation" novalidate="" action="<?php $_SERVER["PHP_SELF"] ?>" method="POST">
+              <div class="position-relative mb-4">
+                <label for="register-email" class="form-label">Email</label>
+                <input type="email" class="form-control form-control-lg" id="register-email" required="" name="email">
+                <div class="invalid-tooltip bg-transparent py-0">Enter a valid email address!</div>
               </div>
-              <button type="button" class="btn-close fs-sm" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-sm" data-bs-title="Remove" aria-label="Remove from cart"></button>
+              <div class="mb-4">
+                <label for="register-password" class="form-label">Password</label>
+                <div class="password-toggle">
+                  <input type="password" class="form-control form-control-lg" id="register-password" minlength="8" placeholder="Minimum 8 characters" required="" name="password">
+                  <div class="invalid-tooltip bg-transparent py-0">Password does not meet the required criteria!</div>
+                  <label class="password-toggle-button fs-lg" aria-label="Show/hide password">
+                    <input type="checkbox" class="btn-check">
+                  </label>
+                </div>
+              </div>
+              <div class="d-flex flex-column gap-2 mb-4">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="save-pass">
+                  <label for="save-pass" class="form-check-label">Save the password</label>
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="privacy" required="">
+                  <label for="privacy" class="form-check-label">I have read and accept the <a class="text-dark-emphasis" href="#!">Privacy Policy</a></label>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-lg btn-primary w-100" name="create_account"> 
+                Create an account
+                <i class="ci-chevron-right fs-lg ms-1 me-n1"></i>
+              </button>
+            </form>
+  
+            <!-- Divider -->
+            <div class="d-flex align-items-center my-4">
+              <hr class="w-100 m-0">
+              <span class="text-body-emphasis fw-medium text-nowrap mx-4">or continue with</span>
+              <hr class="w-100 m-0">
+            </div>
+  
+            <!-- Social login -->
+            <div class="d-flex flex-column flex-sm-row gap-3 pb-4 mb-3 mb-lg-4">
+              <button type="button" class="btn btn-lg btn-outline-secondary w-100 px-2">
+                <i class="ci-google ms-1 me-1"></i>
+                Google
+              </button>
+              <button type="button" class="btn btn-lg btn-outline-secondary w-100 px-2">
+                <i class="ci-facebook ms-1 me-1"></i>
+                Facebook
+              </button>
+              <button type="button" class="btn btn-lg btn-outline-secondary w-100 px-2">
+                <i class="ci-apple ms-1 me-1"></i>
+                Apple
+              </button>
+            </div>
+  
+            <!-- Footer -->
+            <footer class="mt-auto">
+              <div class="nav mb-4">
+                <a class="nav-link text-decoration-underline p-0" href="help-topics-v1.html">Need help?</a>
+              </div>
+              
+            </footer>
+              </div>
+
+
+
+
+
+              <div class="tab-pane fade" id="signin" role="tabpanel" aria-labelledby="signin-tab">  
+                <h1 class="h2 ">Welcome back</h1>
+                <div class="nav fs-sm mb-4">
+                  Don't have an account?
+                  <a class="nav-link text-decoration-underline p-0 ms-2" href="account-signup.php">Create an account</a>
+                </div>
+      
+                <!-- Form -->
+                <form class="needs-validation" novalidate="" action="<?php $_SERVER["PHP_SELF"] ?>" method="POST">
+                  <div class="position-relative mb-4">
+                    <input type="email" class="form-control form-control-lg" placeholder="Email" required="" name="email">
+                    <div class="invalid-tooltip bg-transparent py-0">Enter a valid email address!</div>
+                  </div>
+                  <div class="mb-4">
+                    <div class="password-toggle">
+                      <input type="password" class="form-control form-control-lg" placeholder="Password" required="" name="password">
+                      <div class="invalid-tooltip bg-transparent py-0">Password is incorrect!</div>
+                      <label class="password-toggle-button fs-lg" aria-label="Show/hide password">
+                        <input type="checkbox" class="btn-check">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between mb-4">
+                    <div class="form-check me-2">
+                      <input type="checkbox" class="form-check-input" id="remember-30">
+                      <label for="remember-30" class="form-check-label">Remember for 30 days</label>
+                    </div>
+                    <div class="nav">
+                      <a class="nav-link animate-underline p-0" href="account-password-recovery.html">
+                        <span class="animate-target">Forgot password?</span>
+                      </a>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-lg btn-primary w-100" name="signin">Sign In</button>
+                </form>
+      
+                <!-- Divider -->
+                <div class="d-flex align-items-center my-4">
+                  <hr class="w-100 m-0">
+                  <span class="text-body-emphasis fw-medium text-nowrap mx-4">or continue with</span>
+                  <hr class="w-100 m-0">
+                </div>
+      
+                <!-- Social login -->
+                <div class="d-flex flex-column flex-sm-row gap-3 pb-4 mb-3 mb-lg-4">
+                  <button type="button" class="btn btn-lg btn-outline-secondary w-100 px-2">
+                    <i class="ci-google ms-1 me-1"></i>
+                    Google
+                  </button>
+                  <button type="button" class="btn btn-lg btn-outline-secondary w-100 px-2">
+                    <i class="ci-facebook ms-1 me-1"></i>
+                    Facebook
+                  </button>
+                  <button type="button" class="btn btn-lg btn-outline-secondary w-100 px-2">
+                    <i class="ci-apple ms-1 me-1"></i>
+                    Apple
+                  </button>
+                </div>
+                
+                <!-- Footer -->
+                <footer class="mt-auto">
+                  <div class="nav mb-4">
+                    <a class="nav-link text-decoration-underline p-0" href="help-topics-v1.html">Need help?</a>
+                  </div>
+                </footer>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Item -->
-        <div class="d-flex align-items-center">
-          <a class="position-relative flex-shrink-0" href="shop-product-general-electronics.html">
-            <span class="badge text-bg-danger position-absolute top-0 start-0">-10%</span>
-            <img src="assets/img/shop/electronics/thumbs/09.png" width="110" alt="iPad Pro">
-          </a>
-          <div class="w-100 min-w-0 ps-2 ps-sm-3">
-            <h5 class="d-flex animate-underline mb-2">
-              <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-general-electronics.html">Tablet Apple iPad Pro M2</a>
-            </h5>
-            <div class="h6 pb-1 mb-2">$989.00 <del class="text-body-tertiary fs-xs fw-normal">$1,099.00</del></div>
-            <div class="d-flex align-items-center justify-content-between">
-              <div class="count-input rounded-2">
-                <button type="button" class="btn btn-icon btn-sm" data-decrement="" aria-label="Decrement quantity">
-                  <i class="ci-minus"></i>
-                </button>
-                <input type="number" class="form-control form-control-sm" value="1" readonly="">
-                <button type="button" class="btn btn-icon btn-sm" data-increment="" aria-label="Increment quantity">
-                  <i class="ci-plus"></i>
-                </button>
-              </div>
-              <button type="button" class="btn-close fs-sm" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-sm" data-bs-title="Remove" aria-label="Remove from cart"></button>
-            </div>
-          </div>
-        </div>
 
-        <!-- Item -->
-        <div class="d-flex align-items-center">
-          <a class="flex-shrink-0" href="shop-product-general-electronics.html">
-            <img src="assets/img/shop/electronics/thumbs/01.png" width="110" alt="Smart Watch">
-          </a>
-          <div class="w-100 min-w-0 ps-2 ps-sm-3">
-            <h5 class="d-flex animate-underline mb-2">
-              <a class="d-block fs-sm fw-medium text-truncate animate-target" href="shop-product-general-electronics.html">Smart Watch Series 7, White</a>
-            </h5>
-            <div class="h6 pb-1 mb-2">$429.00</div>
-            <div class="d-flex align-items-center justify-content-between">
-              <div class="count-input rounded-2">
-                <button type="button" class="btn btn-icon btn-sm" data-decrement="" aria-label="Decrement quantity">
-                  <i class="ci-minus"></i>
-                </button>
-                <input type="number" class="form-control form-control-sm" value="1" readonly="">
-                <button type="button" class="btn btn-icon btn-sm" data-increment="" aria-label="Increment quantity">
-                  <i class="ci-plus"></i>
-                </button>
-              </div>
-              <button type="button" class="btn-close fs-sm" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-sm" data-bs-title="Remove" aria-label="Remove from cart"></button>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Footer -->
-      <div class="offcanvas-header flex-column align-items-start">
-        <div class="d-flex align-items-center justify-content-between w-100 mb-3 mb-md-4">
-          <span class="text-light-emphasis">Subtotal:</span>
-          <span class="h6 mb-0">$2,317.00</span>
+
+          
+          
+  
+  
+          
         </div>
-        <div class="d-flex w-100 gap-3">
-          <a class="btn btn-lg btn-secondary w-100" href="checkout-v1-cart.html">View cart</a>
-          <a class="btn btn-lg btn-primary w-100" href="checkout-v1-delivery-1.html">Checkout</a>
-        </div>
-      </div>
+      </main>
     </div>
 
 
@@ -165,9 +215,8 @@
             <!-- Navbar brand (Logo) -->
             <a href="index.php" class="navbar-brand me-0 mt-0">
               <span class="d-none d-sm-flex flex-shrink-0 text-primary me-2">
-                <img src="assets/img/book-heaven-logo.jpeg" width="90">
+                <img src="assets/img/book-heaven-logo.jpeg" height="auto" width="120px">
               </span>
-              <span class="mt-3">Book Heaven</span>
             </a>
           </div>
           <div class="col col-lg-9 d-flex align-items-center justify-content-end">
@@ -240,17 +289,16 @@
       <div class="collapse navbar-stuck-hide" id="stuckNav">
         <nav class="offcanvas offcanvas-start" id="navbarNav" tabindex="-1" aria-labelledby="navbarNavLabel">
           <div class="offcanvas-header py-3">
-            <h5 class="offcanvas-title" id="navbarNavLabel">Browse Cartzilla</h5>
+            <h5 class="offcanvas-title" id="navbarNavLabel">Book Heaven</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body py-3 py-lg-0">
             <div class="container px-0 px-lg-3">
               <div class="row">
 
-                
-
                 <!-- Navbar nav -->
-                <div class="col-lg-9 d-lg-flex pt-3 pt-lg-0 ps-lg-0">
+                <div class="container d-flex justify-content-center">
+                <div class="col-lg-7 d-lg-flex pt-3 pt-lg-0 ps-lg-0">
                   <ul class="navbar-nav position-relative">
                     <li class="nav-item dropdown me-lg-n1 me-xl-0">
                       <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-trigger="hover" aria-expanded="false">Home</a>
@@ -518,6 +566,7 @@
                   <hr class="d-lg-none my-3">
                   
                 </div>
+                </div>
               </div>
             </div>
           </div>
@@ -536,8 +585,6 @@
         </nav>
       </div>
     </header>
-  </body>
-  </html>
 
 
 
