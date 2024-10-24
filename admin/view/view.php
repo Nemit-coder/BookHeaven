@@ -111,9 +111,18 @@
                    include 'book_list.php';
                  }
 
-                 else if($vid2 == 'bookdetails'){
-                    include 'book-details.php';
+
+                 else if($vid2 == 'stock')
+                 {
+                   $result = mysqli_query($conn,"SELECT * FROM tbl_stock ORDER BY id DESC");
+                   include 'stock.php';
                  }
+
+
+
+               //   else if($vid2 == 'bookdetails'){
+               //      include 'book-details.php';
+               //   }
                 
                  
                  else {

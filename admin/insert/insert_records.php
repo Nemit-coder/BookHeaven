@@ -5,7 +5,7 @@ session_start();
 
 $category= base64_encode(base64_encode(base64_encode('category')));
 $book= base64_encode(base64_encode(base64_encode('book')));
-$bookdetails= base64_encode(base64_encode(base64_encode('bookdetails')));
+// $stock= base64_encode(base64_encode(base64_encode('stock')));
 
 
  if(isset($_POST['insert_category']))
@@ -37,9 +37,8 @@ else if(isset($_POST['insert_book'])) {
 		$description = $_POST['description'];
 		$language = $_POST['language'];
 		$amount = $_POST['amount'];
-		$spamount = $_POST['spamount'];
 
-		$sql = "INSERT INTO tbl_book (`isbn`,`category_id`, `name`, `publisher`, `author`, `description`, `language`, `amount`, `sp_amount`) VALUES ('$isbn','$category_id','$bookname','$publisher','$author','$description','$language','$amount','$spamount')";
+		$sql = "INSERT INTO tbl_book (`isbn`,`category_id`, `name`, `publisher`, `author`, `description`, `language`, `amount`) VALUES ('$isbn','$category_id','$bookname','$publisher','$author','$description','$language','$amount')";
 		$result = mysqli_query($conn,$sql);
 
 		if($result){
@@ -48,6 +47,27 @@ else if(isset($_POST['insert_book'])) {
 		}
 		else{
 			echo "<script>alert('Error Inserting Book')</script>";
+			echo "<script>window.open('doc.php','_self')</script>";
+		}
+}
+
+
+else if(isset($_POST['insert_stock'])) {
+		// Taking Inputs
+		$isbn = $_POST['isbn'];
+		$bookname = $_POST['bookname'];
+		$amount = $_POST['amount'];
+		$quantity = $_POST['quantity'];
+
+		$sql = "INSERT INTO tbl_stock (`isbn`,`bookname`,`amount`,`quantity`) VALUES ('$isbn','$bookname','$amount','$quantity')";
+		$result = mysqli_query($conn,$sql);
+
+		if($result){
+			echo "<script>alert('Stock Inserted Successfully')</script>";
+			echo "<script>window.open('../view/view.php?VxjMWVHUlhiSGxsVVQwOQ=$stock','_self')</script>";
+		}
+		else{
+			echo "<script>alert('Error Inserting Stock')</script>";
 			echo "<script>window.open('doc.php','_self')</script>";
 		}
 }
@@ -83,7 +103,7 @@ else if(isset($_POST['insert_book_image'])) {
             $query = "INSERT INTO tbl_book_image (type,isbn,stat_file) values('$type','".$isbn."','".$stat_file."')";
             mysqli_query($conn,$query);
 			echo "<script> alert('Image Added successfully') </script>";
-			echo "<script>window.open('../view/view.php?VxjMWVHUlhiSGxsVVQwOQ=$bookdetails','_self')</script>";
+			echo "<script>window.open('../view/view.php?VxjMWVHUlhiSGxsVVQwOQ=$book','_self')</script>";
 	
         }
     }

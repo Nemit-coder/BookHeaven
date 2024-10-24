@@ -76,15 +76,6 @@
                             <input class="form-control" id="amount" type="number" name="amount">
                       </div>
                   </div>
-
-
-                  <div class="row gx-2">
-                      <div class="col-6 mb-2">
-                        <label class="form-label" for="product-name">Special Amount:</label>
-                        <input class="form-control" id="spamount" type="number" name="spamount">
-                      </div>
-                  </div>
-
                   
                   </div>
                   </form>

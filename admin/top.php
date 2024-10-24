@@ -18,6 +18,9 @@
          <li class="nav-item dropdown">
             <a class="nav-link" href="<?php echo BASE_URL?>view/view.php?VxjMWVHUlhiSGxsVVQwOQ=<?php echo base64_encode(base64_encode(base64_encode('book')));?>" role="button"  aria-haspopup="true" aria-expanded="false">Book List</a>
          </li>
+         <li class="nav-item dropdown">
+            <a class="nav-link" href="<?php echo BASE_URL?>view/view.php?VxjMWVHUlhiSGxsVVQwOQ=<?php echo base64_encode(base64_encode(base64_encode('stock')));?>" role="button"  aria-haspopup="true" aria-expanded="false">Stock</a>
+         </li>
          <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dashboards">Admission List</a>
             <div class="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="dashboards">

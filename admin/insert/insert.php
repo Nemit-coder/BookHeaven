@@ -76,18 +76,23 @@ if(!isset($_SESSION["username"])){
         $vid2=base64_decode(base64_decode(base64_decode($_GET['VxjMWVHUlhiSGxsVVQwOQ'])));
         if($vid2 == 'add_category'){
           include 'category.php';
-      }
+        }
+        
+        else if($vid2 == 'add_book'){
+            include 'add_book.php';
+        }
       
-      else if($vid2 == 'add_book'){
-          include 'add_book.php';
-      }
-     
-      else if($vid2 == 'add_book_image'){
-        include 'add_book_image.php';
-    }
-      else {
-        echo 'Not Found';
-      }
+        else if($vid2 == 'add_book_image'){
+          include 'add_book_image.php';
+        }
+
+        else if($vid2 == 'add_stock'){
+          include 'add_stock.php';
+        }
+
+        else {
+          echo 'Not Found';
+        }
 
         ?>
           
