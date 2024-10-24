@@ -83,7 +83,7 @@ else if(isset($_POST['insert_book_image'])) {
             $query = "INSERT INTO tbl_book_image (type,isbn,stat_file) values('$type','".$isbn."','".$stat_file."')";
             mysqli_query($conn,$query);
 			echo "<script> alert('Image Added successfully') </script>";
-			echo "<script>window.open('../view/view.php?VxjMWVHUlhiSGxsVVQwOQ=$book','_self')</script>";
+			echo "<script>window.open('../view/view.php?VxjMWVHUlhiSGxsVVQwOQ=$bookdetails','_self')</script>";
 	
         }
     }

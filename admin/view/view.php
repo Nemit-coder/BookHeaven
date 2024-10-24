@@ -99,7 +99,6 @@
                
                // End of error handling
                $vid2=base64_decode(base64_decode(base64_decode($_GET['VxjMWVHUlhiSGxsVVQwOQ'])));
-               
                  if(base64_decode(base64_decode(base64_decode($_GET['VxjMWVHUlhiSGxsVVQwOQ']))) == 'category')
                  {
                    $result = mysqli_query($conn,"SELECT * FROM tbl_category");
@@ -112,9 +111,9 @@
                    include 'book_list.php';
                  }
 
-               //   else if($vid2 == 'bookdetails'){
-               //      include 'book-details.php';
-               //   }
+                 else if($vid2 == 'bookdetails'){
+                    include 'book-details.php';
+                 }
                 
                  
                  else {

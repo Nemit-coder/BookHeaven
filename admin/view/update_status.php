@@ -2,23 +2,23 @@
 $category= base64_encode(base64_encode(base64_encode('category')));
 $doc= base64_encode(base64_encode(base64_encode('image')));
 
-if(isset($_GET['productid'])){
-       $targetId = base64_decode(base64_decode(base64_decode(base64_decode(base64_decode($_GET['productid'])))));
+if(isset($_GET['category_id'])){
+       $targetId = base64_decode(base64_decode(base64_decode(base64_decode(base64_decode($_GET['category_id'])))));
 
-$result = mysqli_query($conn, "SELECT * FROM tbl_category WHERE  id=$targetId");
+$result = mysqli_query($conn, "SELECT * FROM tbl_category WHERE category_id=$targetId");
 $row = mysqli_fetch_array($result);
 $status = $row['status'];
        if($status == 1){
               $status = 0;
               mysqli_query($conn, "UPDATE tbl_category SET status='$status'
-                            WHERE id=$targetId");
-              echo "<script>alert('RECORD Deactivated')</script>";
+                            WHERE category_id=$targetId");
+              echo "<script>alert('Category Deactivated')</script>";
               echo "<script>window.open('../view/view.php?VxjMWVHUlhiSGxsVVQwOQ=$category','_self')</script>";
        }
        else{
               $status = 1;
               mysqli_query($conn, "UPDATE tbl_category SET status='$status'
-                            WHERE id=$targetId");
+                            WHERE category_id=$targetId");
               echo "<script>alert('Record Activated')</script>";
               echo "<script>window.open('../view/view.php?VxjMWVHUlhiSGxsVVQwOQ=$category','_self')</script>";
      }

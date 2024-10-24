@@ -1,6 +1,6 @@
     <?php
-        include '../admin/include/connection.php';
-        session_start();
+        // include '../admin/include/connection.php';
+        // session_start();
         if(isset($_POST['signup'])){
           $username = $_POST['username'];
           $mobile_no = $_POST['mobile_no'];
