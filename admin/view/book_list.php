@@ -1,5 +1,4 @@
- <div class="content">
-         
+ <div class="content">         
           <div class="row gx-3">
             <div class="col-xxl-12 col-xl-12">
               <div class="card" id="ticketsTable" data-list='{"valueNames":["no","er","name","date","phone","course","counsellor"],"page":30,"pagination":true,"fallback":"tickets-table-fallback"}'>

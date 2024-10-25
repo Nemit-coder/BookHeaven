@@ -39,7 +39,7 @@
                        <tr>
                        <th class="text-800 sort align-middle" data-sort="no">No</th>
                          
-                         <th class="text-800 sort align-middle" data-sort="name">Name</th>
+                         <th class="text-800 sort align-middle" data-sort="name">Category</th>
                          <th class="text-800 sort align-middle" data-sort="name">Status</th>
                          
                          <th class="text-800 sort align-middle" data-sort="action">Action</th>
@@ -71,6 +71,10 @@
                         }
                         ?></td> 
                         <td>
+                        <a class="btn btn-falcon-default btn-sm mb-sm-0" href="category-details.php?category_id=<?php echo base64_encode(base64_encode(base64_encode(base64_encode(base64_encode($row['category_id'])))))?>" type="button">
+                                                <span class="fas fa-eye me-1"> </span>
+                          </a>  
+
                         <a class="btn btn-falcon-default btn-sm mb-sm-0" href="update_status.php?category_id=<?php echo base64_encode(base64_encode(base64_encode(base64_encode(base64_encode($row['category_id'])))));?>" type="button">
                               <span class="fas fa-trash me-1"> </span>
                         </a>   
