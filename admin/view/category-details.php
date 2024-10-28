@@ -8,10 +8,16 @@ if(!isset($_SESSION["username"])){
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en-US" dir="ltr">
 <?php 
-  $category_id = base64_decode(base64_decode(base64_decode(base64_decode(base64_decode($_GET['category_id'])))));
-  $sql = "SELECT * FROM tbl_sub_category";
+  $category_id = $_GET['category_id'];
+  $sql = "SELECT * FROM tbl_sub_category INNER JOIN tbl_category ON tbl_sub_category.category_id=tbl_category.category_id WHERE tbl_sub_category.category_id='$category_id'";
   $result = mysqli_query($conn,$sql);
-  $row = mysqli_fetch_array($result);
+
+  $result2 = mysqli_query($conn,$sql);
+  $row2 = mysqli_fetch_array($result2);
+
+  // $sql2 = "SELECT * FROM tbl_sub_category";
+  // $result2 = mysqli_query($conn,$sql2);
+  // $row2 = mysqli_fetch_array($result2);
   
   // $sql3 = "SELECT * FROM tbl_book INNER JOIN tbl_book_image ON tbl_book.isbn=tbl_book_image.isbn WHERE tbl_book.isbn='$isbn' AND type='front'";
   // $result3 = mysqli_query($conn,$sql3);
@@ -21,7 +27,7 @@ $cnt=1;
 // while ($row=mysqli_fetch_array($ret)) {
  
 ?>
-<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -84,14 +90,14 @@ $cnt=1;
         <div class="card mb-3">
             <div class="card-body d-flex flex-wrap flex-between-center">
               <div>
-                <h6 class="text-primary">1</h6>
-                <!-- <h5 class="mb-0"><?php echo $row['category_name'] ?></h5> -->
+                <h6 class="text-primary"><?php echo $category_id ?></h6>
+                <h5 class="mb-0"><?php echo $row2['category_name'] ?></h5>
               </div>
               <div>
            </div>
               <div>
              
-              <a class="btn btn-primary btn-sm me-2" type="button" href="<?php echo BASE_URL?>insert/insert.php?VxjMWVHUlhiSGxsVVQwOQ=<?php echo base64_encode(base64_encode(base64_encode('add_book_image')));?>&isbn=<?php echo $isbn ?>">
+              <a class="btn btn-primary btn-sm me-2" type="button" href="<?php echo BASE_URL?>insert/insert.php?VxjMWVHUlhiSGxsVVQwOQ=<?php echo base64_encode(base64_encode(base64_encode('add_sub_category')));?>&category_id=<?php echo $category_id ?>">
                 <span class="far fa-file-pdf me-md-1"> </span>
                 <span class="d-none d-md-inline">Add Sub Category</span>
                   </a>
@@ -147,28 +153,27 @@ $cnt=1;
                          
                         <td class="align-middle no py-2 pe-14"><?php echo $i; ?></td>
                         <td class="align-middle name py-2 pe-2"><?php echo $row["sub_category_name"]; ?></td>
-                        <!-- <td class="align-middle name py-2 pe-2"><?php echo $row["category_name"]; ?></td> -->
+                        <td class="align-middle name py-2 pe-2"><?php echo $row["category_name"]; ?></td>
                         <td>
                         <?php if($row['status'] == 1) { ?>
                             <span class="badge rounded-pill badge-subtle-success me-2"><span>
                             Active
-                            </span>
+                          
                         <?php
                             }
                           else {?>
                               <span class="badge rounded-pill badge-subtle-danger me-2"><span>
                                 Deactive
-                              </span>
+                            
                         <?php  
                           }
                         ?>
-                        </td>
-                        <!-- <td class="align-middle name py-2 pe-2"><?php echo $row["status"]; ?></td> -->
+                       
                         <td>
                           
-                          <a class="btn btn-falcon-default btn-sm mb-sm-0" href="../delete.php?productid=<?php echo base64_encode(base64_encode(base64_encode(base64_encode(base64_encode( $row['sub_category_id'])))))?>" type="button">
-                                                <span class="fas fa-trash me-1"> </span>
-                          </a>    
+                        <a class="btn btn-falcon-default btn-sm mb-sm-0" href="update_status.php?category_id=<?php echo base64_encode(base64_encode(base64_encode(base64_encode(base64_encode($row['sub_category_id'])))));?>" type="button">
+                              <span class="fas fa-trash me-1"> </span>
+                        </a>    
 
                         </td>
                      
@@ -197,5 +202,16 @@ $cnt=1;
           <?php include '../template/bottom.php'?>
         </div>
 
+
+        <script src="<?php echo BASE_URL?>vendors/popper/popper.min.js"></script>
+      <script src="<?php echo BASE_URL?>vendors/bootstrap/bootstrap.min.js"></script>
+      <script src="<?php echo BASE_URL?>vendors/anchorjs/anchor.min.js"></script>
+      <script src="<?php echo BASE_URL?>vendors/is/is.min.js"></script>
+      <script src="<?php echo BASE_URL?>vendors/echarts/echarts.min.js"></script>
+      <script src="<?php echo BASE_URL?>vendors/fontawesome/all.min.js"></script>
+      <script src="<?php echo BASE_URL?>vendors/lodash/lodash.min.js"></script>
+      <script src="<?php echo BASE_URL?>polyfill.io/v3/polyfill.min58be.js?features=window.scroll"></script>
+      <script src="<?php echo BASE_URL?>vendors/list.js/list.min.js"></script>
+      <script src="<?php echo BASE_URL?>assets/js/theme.js"></script>      
   </body>
   </html>

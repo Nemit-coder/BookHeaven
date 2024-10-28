@@ -1,25 +1,16 @@
-.carousel-inner{
-    height: 600px;
-}
-
-.scroll-container {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-}
-.scroll-container::-webkit-scrollbar {
-    display: none;  /* Chrome, Safari and Opera */
-}
-.book-card {
-    flex: 0 0 auto;
-    margin-right: 20px;
-    scroll-snap-align: start;
-}
-.scroll-button-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
+@media (max-width: 991.98px) { /* Bootstrap's lg breakpoint */
+    .dropdown-menu {
+      width: 100%;
+      max-width: 100%;
+      padding: 1rem !important;
+    }
+    
+    .category-column {
+      margin-bottom: 1rem;
+    }
+    
+    /* Optional: adjust spacing for mobile */
+    .nav.flex-column {
+      margin-bottom: 2rem !important;
+    }
+  }

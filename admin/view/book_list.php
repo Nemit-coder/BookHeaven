@@ -6,7 +6,7 @@
                   <div class="d-lg-flex justify-content-between">
                     <div class="row flex-between-center gy-2 px-x1">
                       <div class="col-auto pe-0">
-                        <h6 class="mb-0">All product Images</h6>
+                        <h6 class="mb-0">All Books</h6>
                       </div>
                       <div class="col-auto">
                         <form>

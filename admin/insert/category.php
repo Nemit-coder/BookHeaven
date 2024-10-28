@@ -20,28 +20,16 @@
                 <div class="card-header bg-body-tertiary">
                   <h6 class="mb-0">Basic information</h6>
                 </div>
-                <div class="card-body pt-0">
-                 
+                <div class="card-body pt-0"> 
                   <div class="row gx-2">
                       <div class="col-md-12 col-sm-12 mb-2">
                         <label class="form-label" for="product-name">Category name:</label>
                         <input class="form-control" id="product-name" type="text" name="name"/></div>
-                    
                   </div>
-
-                
-
-
-                 
-
                   </form>
                 </div>
               </div>
-             
             </div>
-            
           </div>
-         
-          
           <?php include '../template/bottom.php';?>
         </div>

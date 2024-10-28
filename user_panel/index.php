@@ -40,6 +40,7 @@
     <link rel="preload" href="assets/css/theme.min.css" as="style">
     <link rel="preload" href="assets/css/theme.rtl.min.css" as="style">
     <link rel="stylesheet" href="assets/css/theme.min.css" id="theme-styles">
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- Customizer -->
     <script src="assets/js/customizer.min.js"></script>

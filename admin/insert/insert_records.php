@@ -17,13 +17,31 @@ $book= base64_encode(base64_encode(base64_encode('book')));
 	 $stmt = $conn->prepare($sql);
 	 $stmt->bind_param("s", $name);
 	if ($stmt->execute()) {
-	echo "<script> alert('course submitted successfully'); </script>";
+	echo "<script> alert('Category Inserted successfully'); </script>";
 		echo "<script>window.open('../view/view.php?VxjMWVHUlhiSGxsVVQwOQ=$category','_self')</script>";
     } else {
 		echo "Error: " . $stmt->error;
 	}
 	$stmt->close();
 	$conn->close();
+}
+
+else if(isset($_POST['insert_sub_category'])) {
+	// Taking Inputs
+	$category_id = $_POST['category_id'];
+	$sub_category_name = $_POST['sub_category_name'];
+
+	$sql = "INSERT INTO tbl_sub_category (`sub_category_name`,`category_id`) VALUES ('$sub_category_name','$category_id')";
+	$result = mysqli_query($conn,$sql);
+
+	if($result){
+		echo "<script>alert('Sub Category Inserted Successfully')</script>";
+		echo "<script>window.open('../view/view.php?VxjMWVHUlhiSGxsVVQwOQ=$category','_self')</script>";
+	}
+	else{	
+		echo "<script>alert('Error Inserting Stock')</script>";
+		echo "<script>window.open('doc.php','_self')</script>";
+	}
 }
 
 

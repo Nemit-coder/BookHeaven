@@ -71,7 +71,7 @@
                         }
                         ?></td> 
                         <td>
-                        <a class="btn btn-falcon-default btn-sm mb-sm-0" href="category-details.php?category_id=<?php echo base64_encode(base64_encode(base64_encode(base64_encode(base64_encode($row['category_id'])))))?>" type="button">
+                        <a class="btn btn-falcon-default btn-sm mb-sm-0" href="category-details.php?category_id=<?php echo $row['category_id']?>" type="button">
                                                 <span class="fas fa-eye me-1"> </span>
                           </a>  
 

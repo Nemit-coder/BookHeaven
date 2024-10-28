@@ -1,5 +1,5 @@
     <?php
-        // include '../admin/include/connection.php';
+        include '../admin/include/connection.php';
         // session_start();
         if(isset($_POST['signup'])){
           $username = $_POST['username'];
@@ -263,11 +263,11 @@
                  else {
                ?>
 
-                  <div class="offcanvas-header flex-column align-items-start py-3 pt-lg-4">
+                  <!-- <div class="offcanvas-header flex-column align-items-start py-3 pt-lg-4">
                     <div class="d-flex align-items-center justify-content-between w-100 mb-3 mb-lg-4">
                       <h4 class="offcanvas-title" id="shoppingCartLabel">Shopping cart</h4>
                     </div>
-                  </div>
+                  </div> -->
             
 
                   <!-- Footer -->
@@ -462,122 +462,55 @@
                     <li class="nav-item dropdown position-static me-lg-n1 me-xl-0">
                       <a class="nav-link dropdown-toggle active" aria-current="page" href="#" role="button" data-bs-toggle="dropdown" data-bs-trigger="hover" aria-expanded="false">Categories</a>
                       <div class="dropdown-menu rounded-4 p-4">
-                        <div class="d-flex flex-column flex-lg-row gap-4">
-                          <div style="min-width: 190px">
-                            <div class="h6 mb-2">Fiction</div>
-                            <ul class="nav flex-column gap-2 mt-0">
-                              <li class="d-flex w-100 pt-1">
-                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="home-categories.php?category=fiction">Literary Fiction</a>
-                              </li>
-                              <li class="d-flex w-100 pt-1">
-                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-electronics.html">Mystery & Thriller</a>
-                              </li>
-                              <li class="d-flex w-100 pt-1">
-                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-general-electronics.html">Romance</a>
-                              </li>
-                              <li class="d-flex w-100 pt-1">
-                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-details-electronics.html">Science Fiction & Fantasy
-                                </a>
-                              </li>
-                              <li class="d-flex w-100 pt-1">
-                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-reviews-electronics.html">Adventure</a>
-                              </li>
-                            </ul>
-                            <div class="h6 pt-4 mb-2">Non-Fiction</div>
-                            <ul class="nav flex-column gap-2 mt-0">
-                              <li class="d-flex w-100 pt-1">
-                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="home-categories.php?category=non-fiction">Biography & Memoir
-                                </a>
-                              </li>
-                              <li class="d-flex w-100 pt-1">
-                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-fashion.html">Self-help
-                                </a>
-                              </li>
-                              <li class="d-flex w-100 pt-1">
-                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-fashion.html">Religion & Spirituality
-                                </a>
-                              </li>
-                              <li class="d-flex w-100 pt-1">
-                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-fashion.html">Psychology
-                                </a>
-                              </li>
-                              <li class="d-flex w-100 pt-1">
-                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-fashion.html">Politics
-                                </a>
-                              </li>
-                              <li class="d-flex w-100 pt-1">
-                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-fashion.html">Philosophy   
-                                </a>
-                              </li>
-                            </ul>
-                        </div>
-                        <div style="min-width: 190px">
-                              <div class="h6 mb-2">Comics and Graphic Novels</div>
-                              <ul class="nav flex-column gap-2 mt-0">
-                                <li class="d-flex w-100 pt-1">
-                                  <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-furniture.html">Manga</a>
-                                </li>
-                                <li class="d-flex w-100 pt-1">
-                                  <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-furniture.html">Superhero Comics
-                                </a>
-                                </li>
-                              </ul>
-                            <div class="h6 pt-4 mb-2">Cookbooks and Food</div>
-                            <ul class="nav flex-column gap-2 mt-0">
-                              <li class="d-flex w-100 pt-1">
-                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-catalog-grocery.html">Recipes</a>
-                              </li>
-                              <li class="d-flex w-100 pt-1">
-                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="shop-product-grocery.html">Cooking Techniques
-                                </a>
-                              </li>
-                            </ul>
-                            <div class="h6 pt-4 mb-2">Religion & Spirituality
-                            </div>
-                            <ul class="nav flex-column gap-2 mt-0">
-                              <li class="d-flex w-100 pt-1">
-                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v1-cart.html">Christianity</a>
-                              </li>
-                              <li class="d-flex w-100 pt-1">
-                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v1-delivery-1.html">Hinduism</a>
-                              </li>
-                              <li class="d-flex w-100 pt-1">
-                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v1-delivery-2.html">Islam</a>
-                              </li>
-                              <li class="d-flex w-100 pt-1">
-                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v1-shipping.html">Buddhism</a>
-                              </li>
-                            </ul>
-                          </div>
-                          <div style="min-width: 190px">
-                            <div class="h6 mb-2">Sports</div>
-                            <ul class="nav flex-column gap-2 mt-0">
-                              <li class="d-flex w-100 pt-1">
-                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v2-cart.html">Biographies of Athletes
-                                </a>
-                              </li>
-                              <li class="d-flex w-100 pt-1">
-                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v2-delivery.html">Sports Techniques & Guides
-                                </a>
-                              </li>
-                            </ul>
-                            <div class="h6 pt-4 mb-2">Health & Fitness
-                            </div>
-                            <ul class="nav flex-column gap-2 mt-0">
-                              <li class="d-flex w-100 pt-1">
-                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v2-cart.html">Nutrition
-                                </a>
-                              </li>
-                              <li class="d-flex w-100 pt-1">
-                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v2-delivery.html">Exercise & Fitness
-                                </a>
-                              </li>
-                              <li class="d-flex w-100 pt-1">
-                                <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" href="checkout-v2-delivery.html">Mental Health
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
+                        <!-- Change d-flex to d-block d-lg-flex for responsive behavior -->
+                        <div class="d-block d-lg-flex flex-lg-row gap-4">
+                          <?php
+                          $sql = "SELECT * FROM tbl_category";
+                          $result = mysqli_query($conn, $sql);
+                          
+                          if(mysqli_num_rows($result) > 0) {
+                            $categories = mysqli_fetch_all($result, MYSQLI_ASSOC);
+                            $total_categories = count($categories);
+                            $categories_per_column = 3;
+                            $current_category = 0;
+
+                            // Calculate columns (only for large screens)
+                            $columns = ceil($total_categories / $categories_per_column);
+
+                            // On mobile: single column, On desktop: multiple columns
+                            for($col = 0; $col < $columns; $col++) {
+                              // Add responsive classes to the column div
+                              echo '<div class="category-column w-100 w-lg-auto" style="min-width: 190px">';
+                              
+                              for($i = 0; $i < $categories_per_column; $i++) {
+                                if($current_category >= $total_categories) break;
+                                
+                                $category = $categories[$current_category];
+                                $category_id = $category['category_id'];
+                                $sub_cat_sql = "SELECT * FROM tbl_sub_category WHERE category_id = $category_id";
+                                $sub_result = mysqli_query($conn, $sub_cat_sql);
+                                ?>
+                                
+                                <div class="h6 mb-2"><?php echo $category['category_name']; ?></div>
+                                <ul class="nav flex-column gap-2 mt-0 mb-4">
+                                  <?php while($sub_category = mysqli_fetch_assoc($sub_result)) { ?>
+                                    <li class="d-flex w-100 pt-1">
+                                      <a class="nav-link animate-underline animate-target d-inline fw-normal text-truncate p-0" 
+                                         href="home-categories.php?category=<?php echo $sub_category['sub_category_id']; ?>">
+                                         <?php echo $sub_category['sub_category_name']; ?>
+                                      </a>
+                                    </li>
+                                  <?php } ?>
+                                </ul>
+                                
+                                <?php
+                                $current_category++;
+                              }
+                              
+                              echo '</div>';
+                            }
+                          }
+                          ?>
                         </div>
                       </div>
                     </li>
@@ -679,6 +612,9 @@
         </nav>
       </div>
     </header>
+
+
+
 
 
 

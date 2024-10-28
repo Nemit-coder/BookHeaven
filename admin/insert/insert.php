@@ -77,6 +77,10 @@ if(!isset($_SESSION["username"])){
         if($vid2 == 'add_category'){
           include 'category.php';
         }
+
+        else if($vid2 == 'add_sub_category'){
+          include 'add_sub_category.php';
+        }
         
         else if($vid2 == 'add_book'){
             include 'add_book.php';
