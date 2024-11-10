@@ -1,3 +1,4 @@
+<?php require_once 'include/init.php'; ?>
 <!DOCTYPE html><html lang="en" data-bs-theme="light" data-pwa="true">
 <head>
     <meta charset="utf-8">
@@ -655,5 +656,20 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   
 
+
+    <script>
+    <?php if(isset($_SESSION['success'])): ?>
+        alert('<?php echo $_SESSION['success']; ?>');
+        <?php unset($_SESSION['success']); ?>
+    <?php endif; ?>
+
+    <?php if(isset($_SESSION['error'])): ?>
+        alert('<?php echo $_SESSION['error']; ?>');
+        <?php unset($_SESSION['error']); ?>
+    <?php endif; ?>
+    </script> 
 </body>
 </html>
+<?php
+ob_end_flush(); // End output buffering and send output
+?>

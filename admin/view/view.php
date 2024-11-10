@@ -118,6 +118,12 @@
                    include 'stock.php';
                  }
 
+                 else if($vid2 == 'user_log')
+                 {
+                   $result = mysqli_query($conn,"SELECT * FROM tbl_user_signup ORDER BY id DESC");
+                   include 'user-log.php';
+                 }
+
 
 
                //   else if($vid2 == 'bookdetails'){

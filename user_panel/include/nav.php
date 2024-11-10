@@ -1,68 +1,7 @@
-    <?php
-        include '../admin/include/connection.php';
+<?php
+        // include '../admin/include/connection.php';
+        include 'signup.php';
         // session_start();
-        if(isset($_POST['signup'])){
-          $username = $_POST['username'];
-          $mobile_no = $_POST['mobile_no'];
-          $email = $_POST['email'];
-          $password = $_POST['password'];
-
-          $exist = "SELECT * FROM tbl_user_signup WHERE mobile_no='$mobile_no' OR email='$email'";
-          $result = mysqli_query($conn, $exist);
-          if(mysqli_num_rows($result)>0){
-            echo "<script>alert('User already exist')</script>";
-            echo "<script>window.open('index.php','_self')</script>";
-            exit();
-          }
-          else {
-            $sql = "INSERT INTO tbl_user_signup (username,mobile_no,email,password) VALUES ('$username','$mobile_no','$email','$password')";
-            $result2 = mysqli_query($conn,$sql);
-            if($result2){
-              // session_start();
-              $_SESSION['username'] = $username;
-              header("location: index.php");
-              exit();
-            }
-            else{
-              echo "<script>alert('Some Error')</script>";
-              echo "<script>window.open('index.php','_self')</script>";
-            }
-          }
-        }
-        else if(isset($_POST['signin'])){
-          $emailorpass = $_POST['emailorpass'];
-          $password = $_POST['password'];
-
-          $sql="SELECT * from tbl_user_signup where email or mobile_no = '{$emailorpass}' AND password = '{$password}'";
-          $result=mysqli_query($conn,$sql);
-
-
-          if (mysqli_num_rows($result) > 0) {
-            while($row=mysqli_fetch_assoc($result)){
-              // session_start();
-              $_SESSION['username'] = $username;
-              header("location: index.php");
-            }
-          }
-          else{
-               echo "<script>alert('Invalid Username or Mobile number Or Password')</script>";
-              echo "<script>window.open('index.php','_self')</script>";
-          }
-        }
-        else if(isset($_POST['logout'])){
-          // Initialize the session
-            // session_start();
-            
-            // Unset all of the session variables
-            $_SESSION = array();
-            
-            // Destroy the session.
-            session_destroy();
-            
-            // Redirect to login page
-            header("location: index.php");
-            exit;
-        }
     ?>
     <!-- Shopping cart offcanvas -->
     <div class="offcanvas offcanvas-end pb-sm-2 px-sm-2" id="shoppingCart" tabindex="-1" aria-labelledby="shoppingCartLabel" style="width: 500px">
@@ -88,7 +27,7 @@
 
 
             <?php
-              if(!isset($_SESSION['username'])){
+              if(!isset($_SESSION['user_logged_in'])){
             ?>  
             <!-- Nav Tabs -->
             <ul class="nav nav-tabs mt-3" id="offcanvasTabs" role="tablist">
@@ -106,34 +45,26 @@
           <!---------- Sign Up Tab ---------->
               <div class="tab-pane fade show active" id="create" role="tabpanel" aria-labelledby="create-tab">
               <h1 class="h2 mt-auto">Create an account</h1>
-              <div class="nav fs-sm mb-3 mb-lg-4">
-                I already have an account
-                <a class="nav-link text-decoration-underline p-0 ms-2" href="account-signin.php">Sign in</a>
-              </div>
-              <div class="nav fs-sm mb-4 d-lg-none">
-                <span class="me-2">Uncertain about creating an account?</span>
-                <a class="nav-link text-decoration-underline p-0" href="#benefits" data-bs-toggle="offcanvas" aria-controls="benefits">Explore the Benefits</a>
-              </div>
   
             <!-- Form -->
-            <form class="needs-validation" novalidate="" action="<?php $_SERVER["PHP_SELF"] ?>" method="POST">
-              <div class="position-relative mb-4">
+            <form class="needs-validation" novalidate="" action="include/signup.php" method="POST">
+              <div class="position-relative mb-2">
                 <label for="register-user" class="form-label">Username</label>
                 <input type="text" class="form-control form-control-lg" id="username" required="" name="username">
                 <div class="invalid-tooltip bg-transparent py-0">Invalid Username</div>
               </div>
-              <div class="position-relative mb-4">
+              <div class="position-relative mb-2">
                 <label for="register-user" class="form-label">Mobile No</label>
                 <input type="text" class="form-control form-control-lg" id="mobile_no" required="" name="mobile_no">
                 <div class="invalid-tooltip bg-transparent py-0">Invalid Mobile Number</div>
               </div>
-              <div class="position-relative mb-4">
+              <div class="position-relative mb-2">
                 <label for="register-email" class="form-label">Email</label>
                 <input type="email" class="form-control form-control-lg" id="register-email" required="" name="email">
                 <div class="invalid-tooltip bg-transparent py-0">Enter a valid email address!</div>
                 <div class="invalid-tooltip bg-transparent py-0"><?php echo isset($error) ? $error : 'Email already exists!' ?></div>
               </div>
-              <div class="mb-4">
+              <div class="mb-3">
                 <label for="register-password" class="form-label">Password</label>
                 <div class="password-toggle">
                   <input type="password" class="form-control form-control-lg" id="register-password" minlength="8" placeholder="Minimum 8 characters" required="" name="password">
@@ -143,7 +74,7 @@
                   </label>
                 </div>
               </div>
-              <div class="d-flex flex-column gap-2 mb-4">
+              <!-- <div class="d-flex flex-column gap-2 mb-4">
                 <div class="form-check">
                   <input type="checkbox" class="form-check-input" id="save-pass">
                   <label for="save-pass" class="form-check-label">Save the password</label>
@@ -152,7 +83,7 @@
                   <input type="checkbox" class="form-check-input" id="privacy" required="">
                   <label for="privacy" class="form-check-label">I have read and accept the <a class="text-dark-emphasis" href="#!">Privacy Policy</a></label>
                 </div>
-              </div>
+              </div> -->
               <button type="submit" class="btn btn-lg btn-primary w-100" name="signup"> 
                 Sign Up
                 <i class="ci-chevron-right fs-lg ms-1 me-n1"></i>
@@ -167,7 +98,7 @@
             </div>
   
             <!-- Social login -->
-            <div class="d-flex flex-column flex-sm-row gap-3 pb-4 mb-3 mb-lg-4">
+            <div class="d-flex flex-column flex-sm-row gap-3 pb-1 mb-lg-3">
               <button type="button" class="btn btn-lg btn-outline-secondary w-100 px-2">
                 <i class="ci-google ms-1 me-1"></i>
                 Google
@@ -270,7 +201,7 @@
                   </div> -->
             
 
-                  <!-- Footer -->
+                  <!-- After Signup or Signin page -->
                   <div class="offcanvas-header flex-column align-items-start">
                     <div class="d-flex w-100 gap-3">
                       <a class="btn btn-lg btn-secondary w-100" href="checkout-v1-cart.html">View Profile</a>
@@ -324,7 +255,7 @@
             <!-- Sale link visible on screens > 1200px wide (xl breakpoint) -->
             <a class="d-none d-xl-flex align-items-center text-decoration-none animate-shake navbar-stuck-hide me-3 me-xl-4 me-xxl-5" href="shop-catalog-electronics.html">
               <div class="btn btn-icon btn-lg fs-lg text-primary bg-body-secondary bg-opacity-75 pe-none rounded-circle">
-                <i class="ci-percent animate-target"></i>
+                <i class="ci-percent animate-target" style="color: whitesmoke;"></i>
               </div>
               <div class="ps-2 text-nowrap">
                 <div class="fs-xs text-dark text-opacity-50">Only this month</div>
@@ -600,8 +531,8 @@
           <div class="offcanvas-header border-top px-0 py-3 mt-3 d-md-none">
             <div class="nav nav-justified w-100">
               <a class="nav-link border-end" href="account-signin.html">
-                <i class="ci-user fs-lg opacity-60 me-2"></i>
-                Account
+                <i class="ci-shopping-cart fs-lg opacity-60 me-2"></i>
+                Shopping Cart  
               </a>
               <a class="nav-link" href="account-wishlist.html">
                 <i class="ci-heart fs-lg opacity-60 me-2"></i>
@@ -612,6 +543,29 @@
         </nav>
       </div>
     </header>
+
+
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    <?php if(isset($_SESSION['show_offcanvas'])): ?>
+        var offcanvasElement = document.getElementById('shoppingCart');
+        var offcanvas = new bootstrap.Offcanvas(offcanvasElement);
+        offcanvas.show();
+        <?php unset($_SESSION['show_offcanvas']); ?>
+    <?php endif; ?>
+
+    <?php if(isset($_SESSION['success'])): ?>
+        alert('<?php echo $_SESSION['success']; ?>');
+        <?php unset($_SESSION['success']); ?>
+    <?php endif; ?>
+
+    <?php if(isset($_SESSION['error'])): ?>
+        alert('<?php echo $_SESSION['error']; ?>');
+        <?php unset($_SESSION['error']); ?>
+    <?php endif; ?>
+});
+</script>
 
 
 
